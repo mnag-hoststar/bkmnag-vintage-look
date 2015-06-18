@@ -1,0 +1,43 @@
+{% extends "layout.twig" %}
+
+{% block content %}
+
+<header class="bk-pt-default">
+    <div class="wrapper clearfix">
+        <div class="brand">
+            {{widget('logo', 'logo', {"defaultlogo": asset('images/logo.png')})|raw}}
+            {{widget('companyname', 'companyname', {"business": "profile"})|raw}}
+        </div>
+        {{widget('extendednavigation', 'navigationheader', {"align":"center"})|raw}}
+    </div>
+</header>
+
+<div class="canvas">
+
+<div class="main wrapper clearfix">
+    {{zone('main')|raw}}
+</div>
+
+</div>
+
+<footer class="bk-footer">
+    <div class="wrapper clearfix">
+        <div class="responsivecolumns columns-three-33-34-33">
+           <div class="column columns-three-left">
+                {{widget('content', 'footercolumn1content1', {"content":"<h4>Lorem Ipsum Dolor</h4>"})|raw}}
+                {{widget('profile', 'footercolumn1profileaddress', { 'profileType':'address', 'address':'profile'})|raw}}
+           </div>
+           <div class="column columns-three-middle">
+                {{widget('content', 'footercolumn2content1', {"content":"<h4>Vivamus Tempus</h4>"})|raw}}
+                {{widget('profile', 'footercolumn2phone', { 'profileType':'phone', 'phone':'profile'})|raw}}
+           </div>
+           <div class="column columns-three-right">
+                {{widget('content', 'footercolumn3content1', {"content":"<h4>Lorem Ipsum Dolor</h4>"})|raw}}
+                {{widget('profile', 'footercolumn3profilesocialicons', { 'profileType' : 'socialicons' })|raw}}
+               
+           </div>
+        </div>
+    </div>
+</footer>
+
+{% endblock %}
