@@ -1,7 +1,7 @@
 {
 	"name":"Vintage Look",
-	"thumbnail":"vintagelook.png",
-	"screenshot":"vintagelook.png",
+	"thumbnail":"thumbnail.png",
+	"screenshot":"vintagelook-screenshot.jpg",
 	"templateType":"standard",
     "pageTypes": ["home"],
     "tags": {
