@@ -393,7 +393,9 @@ div.widget.extendednavigation ul li {
    =============================== */
 
 
-.widget.button button, .btn {
+.widget.button button, .btn,
+.contactform button, .contactform button.btn, 
+.advancedcontactform button, .advancedcontactform button.btn {
   padding: 8px 30px;
   border: 0;
   box-shadow: 1px 1px 0px 0px @color-swatch6;
@@ -581,7 +583,7 @@ hr.line {
     padding: 0;
 }
 
-.widget.contactform fieldset label {
+.contactform label, .advancedcontactform label {
     width: 100%;
     float: left;
     font-family:@font-swatch5-font-family;
@@ -592,14 +594,14 @@ hr.line {
     letter-spacing: @font-swatch5-letter-spacing;
 }
 
-.widget.contactform fieldset input {
+.contactform input, .contactform select, .advancedcontactform input, .advancedcontactform select {
     height: 40px;
     width: 100%;
     margin-top: 6px;
     margin-bottom: 30px;
 }
 
-.widget.contactform fieldset textarea {
+.contactform textarea, .advancedcontactform textarea {
     height: 100px;
     width: 100%;
     margin-top: 6px;
