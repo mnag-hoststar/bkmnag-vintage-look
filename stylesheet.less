@@ -108,6 +108,7 @@ body {
 // Inner
 
 .language-selector__inner {
+	.language-selector &,
     .language-selector.language-selector--horizontal &,
     .language-selector.language-selector--dropdown & {
 	    box-sizing: content-box;
@@ -116,7 +117,7 @@ body {
     	width: 95%;
 		margin: 0 auto;
     }
-    
+	
     .language-selector.language-selector--horizontal & {
 		padding: @language-padding 0 0;
 		
@@ -173,6 +174,7 @@ body {
 // Item
 
 .language-selector__item {
+	.language-selector &,
 	.language-selector.language-selector--light &,
 	.language-selector.language-selector--dark & {
 		cursor: pointer;
@@ -189,6 +191,7 @@ body {
 	
 	// Link Color
 	
+	.language-selector &,
 	.language-selector.language-selector--horizontal & {
 		.language-selector--light& {
             background-color: @color-swatch7;
@@ -271,6 +274,7 @@ body {
 	
 	// Horizontal - Item
 	
+	.language-selector &,
 	.language-selector.language-selector--horizontal & {
 		text-align: right;
 		display: inline-block;
@@ -288,6 +292,8 @@ body {
 	
 	// Link Color
 	
+	.language-selector &,
+	.language-selector .language-selector__item--current &,
 	.language-selector.language-selector--horizontal &,
 	.language-selector.language-selector--horizontal .language-selector__item--current &,
 	.language-selector.language-selector--dropdown &,
