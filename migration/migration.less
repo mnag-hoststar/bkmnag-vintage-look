@@ -20,8 +20,17 @@
 
     // Re-add spacing back to the feature widget
     .canvas > section {
-        padding: 30px;
+        padding: 30px 30px 0;
     }
+}
+
+
+
+// Row improvments
+// ------------------------------------
+
+[id^="migrate"] .row--image-text-7a blockquote {
+    padding: 16px;
 }
 
 
@@ -39,5 +48,20 @@
         &:last-child {
             margin-bottom: 30px;        // Re-add main zone bottom spacing
         }
+    }
+
+    .bk-pt-default + .canvas #page-zones__main > .widget:not([data-name="row"]) {
+        &:first-child {
+           margin-top: 30px; 
+        }
+        
+        &:last-child {
+            margin-bottom: 30px;
+        }
+    }
+
+    // Add spacing to the top of a widget when it proceeds a row
+    #page-zones__main > [data-name="row"] + .widget:not([data-name="row"]) {
+        margin-top: 16px;
     }
 }
