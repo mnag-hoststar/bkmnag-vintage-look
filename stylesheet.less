@@ -40,10 +40,6 @@ body {
   padding-top: 20px;
 }
 
-.main {
-  //padding: 30px 0;
-}
-
 .transition (@prop: all, @time: 0.5s, @ease: ease) {
     -webkit-transition: @prop @time @ease;
     -moz-transition:    @prop @time @ease;
@@ -285,9 +281,9 @@ body {
 	.language-selector.language-selector--dropdown & {
 		padding-right: @language-padding*4;
         
-        @media @tablet {
-			height: auto;
-        }
+    @media @tablet {
+      height: auto;
+    }
 	}
 	
 	// Link Color
@@ -362,6 +358,73 @@ body {
 		}
 	}
 }
+
+
+/* ===============================
+   TYPOGRAPHY
+   =============================== */
+
+h1, h2, h3, h4, h5, h6, [class*="contentgroup__h"] {
+    .style--light & {
+        color: @contrast--light;
+    }
+
+    .style--accent & {
+        color: @contrast--accent;
+    }
+
+    .style--dark & {
+        color: @contrast--dark;
+    }
+}
+
+p, ul, ol, li, .contentgroup__body {
+    .style--light & {
+        color: fade(@contrast--light, 80%);
+    }
+
+    .style--accent & {
+        color: fade(@contrast--accent, 80%);
+    }
+
+    .style--dark & {
+        color: fade(@contrast--dark, 80%);
+    }
+}
+
+[data-name*="content"] a:not(.contentgroup__link) {
+    .style--light & {
+        color: @color--accent;
+    }
+
+    .style--accent & {
+        color: @contrast--accent;
+    }
+
+    .style--dark & {
+        color: @contrast--dark;
+    }
+}
+
+label:not(.clicktocall__label), .label-text {
+    font-family: @font__h4--font-family;
+    font-size: 0.9em;
+    color: @color-text--faded;
+    word-wrap: normal;
+
+    .style--light & {
+        color: fade(@contrast--light, 80%);
+    }
+
+    .style--accent & {
+        color: fade(@contrast--accent, 80%);
+    }
+
+    .style--dark & {
+        color: fade(@contrast--dark, 80%);
+    }
+}
+
 
 /* ===============================
    HEADER
@@ -675,14 +738,6 @@ div.widget.extendednavigation ul li {
     }
 }
 
-/* FEATURE TITLE */
-
-.widget.feature h2 span, .widget.feature h3 span {
-    //display: inline-block;
-    //padding: 10px 20px 0;
-}
-
-
 
 /* ===============================
    PAYPAL BUTTON
@@ -691,6 +746,18 @@ div.widget.extendednavigation ul li {
 
 .widget.paypalbuynow .widget.button.paypal {
     box-shadow: 1px 1px 0px 0px @color-swatch6;
+
+    .style--light & {
+        box-shadow: 1px 1px 0px 0px @color--dark;
+    }
+
+    .style--accent & {
+        box-shadow: 1px 1px 0px 0px @contrast--dark;
+    }
+
+    .style--dark & {
+        box-shadow: none;
+    }
 }
 
 
@@ -701,6 +768,18 @@ div.widget.extendednavigation ul li {
 .widget.tweet a {
     padding: 10px 10px 10px 40px;
     box-shadow: 1px 1px 0px 0px @color-swatch6;
+
+    .style--light & {
+        box-shadow: 1px 1px 0px 0px @color--dark;
+    }
+
+    .style--accent & {
+        box-shadow: 1px 1px 0px 0px @contrast--dark;
+    }
+
+    .style--dark & {
+        box-shadow: none;
+    }
 }
 
 
@@ -709,7 +788,19 @@ div.widget.extendednavigation ul li {
    =============================== */
 
 .widget.dropbox .b-wrap .btn {
-  box-shadow: 1px 1px 0px 0px @color-swatch6;
+    box-shadow: 1px 1px 0px 0px @color-swatch6;
+
+    .style--light & {
+        box-shadow: 1px 1px 0px 0px @color--dark;
+    }
+
+    .style--accent & {
+        box-shadow: 1px 1px 0px 0px @contrast--dark;
+    }
+
+    .style--dark & {
+        box-shadow: none;
+    }
 }
 
 /* ===============================
@@ -719,7 +810,13 @@ div.widget.extendednavigation ul li {
 
 .widget.button button, .btn,
 .contactform button, .contactform button.btn, 
-.advancedcontactform button, .advancedcontactform button.btn {
+.advancedcontactform button, .advancedcontactform button.btn,
+.widget.paypalbuynow .widget.button.paypal,
+.widget.tweet a,
+.widget.filedownload button,
+.widget.dropbox .b-wrap .btn,
+.contentgroup__link,
+.widget.blogsearch button {
   padding: 8px 30px;
   border: 0;
   box-shadow: 1px 1px 0px 0px @color-swatch6;
@@ -731,10 +828,40 @@ div.widget.extendednavigation ul li {
   color: @font-swatch7-color;
   text-decoration: none;
   cursor: pointer;
+
+    .style--light & {
+        background-color: @color--accent;
+        box-shadow: 1px 1px 0px 0px @color--dark;
+        color: @contrast--accent;
+    }
+
+    .style--accent & {
+        background-color: @color--dark;
+        box-shadow: 1px 1px 0px 0px @color--dark;
+        color: @contrast--dark;
+    }
+
+    .style--dark & {
+        background-color: @color--accent;
+        box-shadow: none;
+        color: @contrast--accent;
+    }
 }
 
 .widget.button button:hover, .btn:hover {
-  background: @font-swatch7-background-color-hover;
+    background: @font-swatch7-background-color-hover;
+
+    .style--light & {
+        background-color: lighten(@color--accent, 10%);
+    }
+
+    .style--accent & {
+        background-color: lighten(@color--dark, 10%);
+    }
+
+    .style--dark & {
+        background-color: lighten(@color--accent, 10%);
+    }
 }
 
 
@@ -759,6 +886,18 @@ div.widget.extendednavigation ul li {
   color: @font-swatch5-color;
   text-decoration: none;
   cursor: default;
+
+    .style--light & {
+        color: @contrast--light;
+    }
+
+    .style--accent & {
+        color: @contrast--accent;
+    }
+
+    .style--dark & {
+        color: @contrast--dark;
+    }
 }
 
 
@@ -770,6 +909,25 @@ blockquote {
     background-color: @color-swatch2;
     border-left: 1px solid @color-swatch3;
     font-style: italic;
+
+    .style--light & {
+        background-color: fade(@color--accent, 10%); 
+        border-color: @color--accent;
+        color: @contrast--light;
+    }
+
+    .style--accent & {
+        background-color: fade(@color--dark, 10%); 
+        border-color: @color--dark;
+        color: @contrast--accent;
+    }
+
+    .style--dark & {
+        background-color: fade(@color--accent, 10%); 
+        border-color: @color--accent;
+        color: @contrast--dark;
+    }
+
     &:before {
         display: none;
     }
@@ -781,22 +939,60 @@ blockquote {
    =============================== */
 
 .widget.twitter {
-  margin: 20px 0;
-  img {
-    border-radius: 50%;
-  }
-  p {
-    color: @color-swatch4;
-    padding: 0;
-  }
-  li {
-    border-bottom: darken(@color-swatch1,10%);
-  }
+    margin: 20px 0;
+
+    img {
+        border-radius: 50%;
+    }
+    p {
+        color: @color-swatch4;
+        padding: 0;
+
+        .style--light & {
+            color: @contrast--light;
+        }
+
+        .style--accent & {
+            color: @contrast--accent;
+        }
+
+        .style--dark & {
+            color: @contrast--dark;
+        }
+    }
+    li {
+        border-bottom: darken(@color-swatch1,10%);
+
+        .style--light & {
+            border-color: darken(@color--light, 10%);
+        }
+
+        .style--accent & {
+            border-color: darken(@color--accent, 10%);
+        }
+
+        .style--dark & {
+            border-color: darken(@color--dark, 10%);
+        }
+    }
   ul li a:hover {
     text-decoration: none;
   }
   li:last-child {
     padding-bottom: 0;
+  }
+  ul li time {
+    .style--light & {
+        color: fade(@contrast--light, 80%);
+    }
+
+    .style--accent & {
+        color: fade(@contrast--accent, 80%);
+    }
+
+    .style--dark & {
+        color: fade(@contrast--dark, 80%);
+    }
   }
   // Tweet Content
   .twitter-profile-pic {
@@ -814,8 +1010,33 @@ blockquote {
         font-family: @font-swatch4-font-family;
         font-size: bkscale(@font-swatch4-font-size, 0.8);
         line-height: bkscale(@font-swatch4-line-height, 0.9);
+
+        .style--light & {
+            color: @contrast--light;
+        }
+
+        .style--accent & {
+            color: @contrast--accent;
+        }
+
+        .style--dark & {
+            color: @contrast--dark;
+        }
+
         &:hover {
             color: @color-swatch3;
+
+            .style--light & {
+                color: @color--accent;
+            }
+
+            .style--accent & {
+                color: @contrast--accent;
+            }
+
+            .style--dark & {
+                color: @contrast--dark;
+            }
         }
     }
     // Tweet Link
@@ -824,19 +1045,53 @@ blockquote {
         font-family: @font-swatch5-font-family;
         font-size: @font-swatch5-font-size;
         text-decoration: none;
+
+        .style--light & {
+            color: @color--accent;
+        }
+
+        .style--accent & {
+            color: @contrast--accent;
+        }
+
+        .style--dark & {
+            color: @contrast--dark;
+        }
+
         &:hover {
             color: darken(@color-swatch3, 15%);
+
+            .style--light & {
+                color: darken(@color--accent, 15%);
+            }
+
+            .style--accent & {
+                color: darken(@contrast--accent, 15%);
+            }
+
+            .style--dark & {
+                color: darken(@contrast--dark, 15%);
+            }
         }
     }
-    p a {
-      //text-decoration: underline;
-    }
     span a {
-      text-decoration: none;
-      &:hover {
-        color: @color-swatch2;
         text-decoration: none;
-      }
+        &:hover {
+            color: @color-swatch2;
+            text-decoration: none;
+
+            .style--light & {
+                color: darken(@color--accent, 15%);
+            }
+
+            .style--accent & {
+                color: darken(@contrast--accent, 15%);
+            }
+
+            .style--dark & {
+                color: darken(@contrast--dark, 15%);
+            }
+        }
     }
     p {
       margin-top: 4px;
@@ -846,12 +1101,37 @@ blockquote {
     }
     // Extra Info
     span, span a, p:last-child {
-      font-size: 13px;
-      color: @color-swatch3;
-      font-weight: inherit;
-      &:hover {
-        color: darken(@color-swatch3, 15%);
-      }
+        font-size: 13px;
+        color: @color-swatch3;
+        font-weight: inherit;
+
+        .style--light & {
+            color: @color--accent;
+        }
+
+        .style--accent & {
+            color: @contrast--accent;
+        }
+
+        .style--dark & {
+            color: @contrast--dark;
+        }
+
+        &:hover {
+            color: darken(@color-swatch3, 15%);
+
+            .style--light & {
+                color: darken(@color--accent, 15%);
+            }
+
+            .style--accent & {
+                color: darken(@contrast--accent, 15%);
+            }
+
+            .style--dark & {
+                color: darken(@contrast--dark, 15%);
+            }
+        }
     }
   }
 }
@@ -865,17 +1145,137 @@ input, textarea {
     border: 1px solid @color-swatch7;
     text-indent: 4px;
     padding: 8px;
+
+    .style--light & {
+        border-color: darken(@color--light, 15%);
+    }
+
+    .style--accent & {
+        border-color: darken(@color--accent 15%);
+    }
+
+    .style--dark & {
+        border-color: fade(@contrast--dark, 85%);
+    }
+
     &:hover {
         border: 1px solid darken(@color-swatch7, 7%);
+
+        .style--light & {
+            border-color: darken(@color--light, 22%);
+        }
+
+        .style--accent & {
+            border-color: darken(@color--accent 27%);
+        }
+
+        .style--dark & {
+            border-color: fade(@contrast--dark, 78%);
+        }
     }
     &:focus {
         box-shadow: none;
         border: 1px solid darken(@color-swatch7, 14%);
+
+        .style--light & {
+            border-color: darken(@color--light, 29%);
+        }
+
+        .style--accent & {
+            border-color: darken(@color--accent 34%);
+        }
+
+        .style--dark & {
+            border-color: fade(@contrast--dark, 71%);
+        }
+    }
+}
+
+// Placeholders
+::-webkit-input-placeholder {
+   color: @color-text--light;
+
+   .style--light & {
+        color: @contrast--light;
+    }
+
+    .style--accent & {
+        color: @contrast--accent;
+    }
+
+    .style--dark & {
+        color: @contrast--dark;
+    }
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   color: @color-text--light;
+
+   .style--light & {
+        color: @contrast--light;
+    }
+
+    .style--accent & {
+        color: @contrast--accent;
+    }
+
+    .style--dark & {
+        color: @contrast--dark;
+    }
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   color: @color-text--light;
+
+   .style--light & {
+        color: @contrast--light;
+    }
+
+    .style--accent & {
+        color: @contrast--accent;
+    }
+
+    .style--dark & {
+        color: @contrast--dark;
+    }
+}
+
+:-ms-input-placeholder {
+   color: @color-text--light;
+
+   .style--light & {
+        color: @contrast--light;
+    }
+
+    .style--accent & {
+        color: @contrast--accent;
+    }
+
+    .style--dark & {
+        color: @contrast--dark;
+    }
+}
+
+
+input:focus {
+    &::-webkit-input-placeholder {
+        color: transparent;
+    }
+
+    &:-moz-placeholder {
+        color: transparent;
+    }
+
+    &::-moz-placeholder {
+        color: transparent;
+    }
+
+    &:-ms-input-placeholder {
+        color: transparent;
     }
 }
 
 // Privacy Checkboxes
-
 .widget.advancedcontactform .form-group.advancedcontactform__form-group--terms,
 .widget.contactform .form-group.contactform__form-group--terms,
 .widget.signupform .form-group.signupform__form-group--terms {
@@ -905,6 +1305,18 @@ input, textarea {
             font-size: @font-swatch5-font-size;
 			font-weight:@font-swatch5-font-weight;
 			letter-spacing: @font-swatch5-letter-spacing;
+
+            .style--light & {
+                color: @contrast--light;
+            }
+
+            .style--accent & {
+                color: @contrast--accent;
+            }
+
+            .style--dark & {
+                color: @contrast--dark;
+            }
 		}
 	}
 }
@@ -915,6 +1327,18 @@ input, textarea {
 
 hr.line {
     background-color: @color-swatch7;
+
+    .style--light & {
+        background-color: darken(@color--light, 15%);
+    }
+
+    .style--accent & {
+        background-color: darken(@color--accent, 20%);
+    }
+
+    .style--dark & {
+        background-color: lighten(@color--dark, 20%);
+    }
 }
 
 
@@ -947,17 +1371,59 @@ hr.line {
     line-height:@font-swatch5-line-height;
     color:@font-swatch5-color;
     letter-spacing: @font-swatch5-letter-spacing;
+
+    .style--light & {
+        color: @contrast--light;
+    }
+
+    .style--accent & {
+        color: @contrast--accent;
+    }
+
+    .style--dark & {
+        color: @contrast--dark;
+    }
 }
 
 .contactform input, .contactform select, .advancedcontactform input, .advancedcontactform select {
     height: 40px;
     width: 100%;
+
+    .style--light & {
+        background-color: @color--light;
+        color: @contrast--light;
+    }
+
+    .style--accent & {
+        background-color: @color--accent;
+        color: @contrast--accent;
+    }
+
+    .style--dark & {
+        background-color: @color--dark;
+        color: @contrast--dark;
+    }
 }
 
 .contactform textarea, .advancedcontactform textarea {
     height: 100px;
     width: 100%;
     resize: none;
+
+    .style--light & {
+        background-color: @color--light;
+        color: @contrast--light;
+    }
+
+    .style--accent & {
+        background-color: @color--accent;
+        color: @contrast--accent;
+    }
+
+    .style--dark & {
+        background-color: @color--dark;
+        color: @contrast--dark;
+    }
 }
 
 .widget.contactform fieldset button.btn {
@@ -968,7 +1434,6 @@ hr.line {
 }
 
 .widget.contactform fieldset button.btn:hover {
-  background-color: @font-swatch7-background-color-hover;
   cursor: pointer;
 }
 
@@ -996,6 +1461,18 @@ hr.line {
     color: @font-swatch4-color;
     line-height:@font-swatch4-line-height;
     letter-spacing: @font-swatch4-letter-spacing;
+
+    .style--light & {
+        color: @contrast--light;
+    }
+
+    .style--accent & {
+        color: @contrast--accent;
+    }
+
+    .style--dark & {
+        color: @contrast--dark;
+    }
 }
 
 .widget.signupform fieldset input, .widget.profile form fieldset input, .widget.blogsearch input {
@@ -1011,13 +1488,24 @@ hr.line {
     font-size: @font-swatch5-font-size;
     color: @font-swatch5-color;
     text-indent: 4px;
-    border: 1px solid @color-swatch7;
-    &:hover {
-        border: 1px solid darken(@color-swatch7, 7%);
+
+    .style--light & {
+        background-color: @color--light;
+        color: @contrast--light;
     }
+
+    .style--accent & {
+        background-color: @color--accent;
+        color: @contrast--accent;
+    }
+
+    .style--dark & {
+        background-color: @color--dark;
+        color: @contrast--dark;
+    }
+
     &:focus {
         box-shadow: none;
-        border: 1px solid darken(@color-swatch7, 14%);
     }
 }
 
@@ -1035,21 +1523,18 @@ hr.line {
     line-height: 40px;
     height: 40px;
     margin: 0 0 0 -4px;
-    padding: 0;
+    padding: 0 6px;
     border: 0;
-    background-color: @font-swatch7-background-color;
     font-family: @font-swatch7-font-family;
     font-weight: @font-swatch7-font-weight;
     letter-spacing: @font-swatch7-letter-spacing;
-    color: @font-swatch7-color;
     font-size: 1em;
+    text-align: center!important;
     text-decoration: none;
     vertical-align: top;
-    box-shadow: 1px 1px 0px 0px @color-swatch6;
 }
 
 .widget.signupform button:hover {
-  background-color: @font-swatch7-background-color-hover;
   cursor: pointer;
 }
 
@@ -1163,6 +1648,28 @@ footer.bk-footer .widget.profile .twitter span {
     line-height: 0;
   }
 
+
+/* ===============================
+   IMAGE WIDGET
+   =============================== */
+
+[data-name="image"] .image-title,
+[data-name="image"] .image-description {
+
+    .style--light & {
+        color: @contrast--light;
+    }
+
+    .style--accent & {
+        color: @contrast--accent;
+    }
+
+    .style--dark & {
+        color: @contrast--dark;
+    }
+}
+
+
 /* ===============================
    SLIDESHOW WIDGET
    =============================== */
@@ -1255,9 +1762,34 @@ footer.bk-footer .widget.profile .twitter span {
             height: 10px;
             margin: 5px;
             cursor: pointer;
+
+            .style--light & {
+                background-color: darken(@color--light, 10%);
+            }
+
+            .style--accent & {
+                background-color: darken(@color--accent, 10%);
+            }
+
+            .style--dark & {
+                background-color: darken(@color--dark, 10%);
+            }
+
             &.selected {
                 background-color: @color-swatch3;
                 border: 0;
+
+                .style--light & {
+                    background-color: @color--accent;
+                }
+
+                .style--accent & {
+                    background-color: @color--dark;
+                }
+
+                .style--dark & {
+                    background-color: @color--accent;
+                }
             }
         }
     }
@@ -1327,19 +1859,68 @@ footer.bk-footer .widget.profile .twitter span {
 
 .blog-post-list {
     color: @color-swatch4;
+
+    .style--light & {
+        color: @contrast--light;
+    }
+
+    .style--accent & {
+        color: @contrast--accent;
+    }
+
+    .style--dark & {
+        color: @contrast--dark;
+    }
+
     h2 {
         font-size: bkscale(@font-swatch2-font-size, 0.90);
         a {
             color: @color-swatch4;
+
+            .style--light & {
+                color: @contrast--light;
+            }
+
+            .style--accent & {
+                color: @contrast--accent;
+            }
+
+            .style--dark & {
+                color: @contrast--dark;
+            }
         }
     }
     .blog-post-date {
         color: @font-swatch5-color;
+
+        .style--light & {
+            color: lighten(@contrast--light, 15%);
+        }
+
+        .style--accent & {
+            color: lighten(@contrast--accent, 15%);
+        }
+
+        .style--dark & {
+            color: lighten(@contrast--dark, 15%);
+        }
     }
     .blog-post-item {
         margin: 2em 0;
         padding-bottom: 20px;
         border-bottom: 1px solid @color-swatch7;
+
+        .style--light & {
+            border-color: darken(@color--light, 15%);
+        }
+
+        .style--accent & {
+            border-color: darken(@color--accent 20%);
+        }
+
+        .style--dark & {
+            border-color: lighten(@color--dark, 20%);
+        }
     }
 }
 
@@ -1351,9 +1932,40 @@ footer.bk-footer .widget.profile .twitter span {
         padding: 8px 30px;
         box-shadow: 1px 1px 0px 0px @color-swatch6;
         margin: 10px 0;
+
+        .style--light & {
+            background-color: @color--accent;
+            box-shadow: 1px 1px 0px 0px @color--dark;
+            color: @contrast--accent;
+        }
+
+        .style--accent & {
+            background-color: @color--dark;
+            box-shadow: 1px 1px 0px 0px @color--dark;
+            color: @contrast--dark;
+        }
+
+        .style--dark & {
+            background-color: @color--accent;
+            box-shadow: none;
+            color: @contrast--accent;
+        }
+
         &:hover {
             text-decoration: none;
             background-color: @font-swatch7-background-color-hover;
+
+            .style--light & {
+                background-color: lighten(@color--accent, 10%);
+            }
+
+            .style--accent & {
+                background-color: lighten(@color--dark, 10%);
+            }
+
+            .style--dark & {
+                background-color: lighten(@color--accent, 10%);
+            }
         }
     }
 }
@@ -1501,6 +2113,21 @@ footer.bk-footer .widget.profile .twitter span {
     margin: 0 5px 0 0;
 }
 
+.widget.ecomproductslist .ecom-productslist-image-wrap,
+.widget.ecomfeaturedproducts .ecom-featuredproducts-wrap .ecom-featuredproducts-product .ecom-featuredproducts-image-wrap {
+    .style--light & {
+        background-color: @color--light;
+    }
+
+    .style--accent & {
+        background-color: @color--accent;
+    }
+
+    .style--dark & {
+        background-color: @color--dark;
+    }
+}
+
 .productlist-display-form .form-group {
   padding: 10px;
   margin: 0;
@@ -1516,6 +2143,7 @@ footer.bk-footer .widget.profile .twitter span {
 .form-group.productlist-search {
   position: relative;
   input[type=search] {
+    background-color: transparent;
     display: inline-block;
     padding-right: 0;
     margin-right: 0;
@@ -1528,6 +2156,21 @@ footer.bk-footer .widget.profile .twitter span {
     height: 40px;
     vertical-align: top;
   }
+}
+
+.product-category-items a,
+.product-category-items span {
+    .style--light & {
+        color: @contrast--light;
+    }
+
+    .style--accent & {
+        color: @contrast--accent;
+    }
+
+    .style--dark & {
+        color: @contrast--dark;
+    }
 }
 
 .ecom-product-go-to-checkout-btn {
@@ -1545,22 +2188,40 @@ footer.bk-footer .widget.profile .twitter span {
 }
 
 select {
-  background-color: transparent;
-  border: 1px solid @color-swatch7;
-  color: @font-swatch5-color;
-  font-family: @font-swatch5-font-family;
-  line-height: 20px;
-  font-size: 13px;
-  text-indent: 0;
-  width: 100%;
-  padding: 8px 10px 10px;
-  outline: none;
-  -webkit-transition: border .2s;
-  -moz-transition: border .2s;
-  -ms-transition: border .2s;
-  transition: border .2s;
-  border-radius: 0;
-  height: 40px;
+    background-color: transparent;
+    border: 1px solid @color-swatch7;
+    color: @font-swatch5-color;
+    font-family: @font-swatch5-font-family;
+    line-height: 20px;
+    font-size: 13px;
+    text-indent: 0;
+    width: 100%;
+    padding: 8px 10px 10px;
+    outline: none;
+    -webkit-transition: border .2s;
+    -moz-transition: border .2s;
+    -ms-transition: border .2s;
+    transition: border .2s;
+    border-radius: 0;
+    height: 40px;
+
+    .style--light & {
+        background-color: @color--light;
+        border-color: darken(@color--light, 15%);
+        color: @contrast--light;
+    }
+
+    .style--accent & {
+        background-color: @color--accent;
+        border-color: darken(@color--accent 20%);
+        color: @contrast--accent;
+    }
+
+    .style--dark & {
+        background-color: @color--dark;
+        border-color: lighten(@color--dark, 20%);
+        color: @contrast--dark;
+    }
 }
 
 .productlist-item-count {
@@ -1757,7 +2418,6 @@ a.btn.ecombasket-summary-link {
   }
   .form-group.productlist-search button {
     margin-left: -4px;
-    width: 25%;
   }
 
 }
@@ -1947,25 +2607,43 @@ a.btn.ecombasket-summary-link {
 
   /* CLICK TO CALL */
 
-  .widget.clicktocall {
+.widget.clicktocall {
   padding: 10px 0;
 }
 
 .widget.clicktocall a {
-  background-image: image('/images/ic-desktop-call.png');
-  background-position: 10px;
-  background-repeat: no-repeat;
-  padding: 10px 10px 10px 38px;
-  margin: 2.2em auto;
-  border: 0;
-  font-family: @font-swatch7-font-family;
-  font-size: @font-swatch7-font-size;
-  font-weight:@font-swatch7-font-weight;
-  background-color: @font-swatch7-background-color;
-  color: @font-swatch7-color;
-  text-decoration: none;
-  cursor: pointer;
-  box-shadow: 1px 1px 0px 0px @color-swatch6;
+    background-image: image('/images/ic-desktop-call.png');
+    background-position: 10px;
+    background-repeat: no-repeat;
+    padding: 10px 10px 10px 38px;
+    margin: 2.2em auto;
+    border: 0;
+    font-family: @font-swatch7-font-family;
+    font-size: @font-swatch7-font-size;
+    font-weight:@font-swatch7-font-weight;
+    background-color: @font-swatch7-background-color;
+    color: @font-swatch7-color;
+    text-decoration: none;
+    cursor: pointer;
+    box-shadow: 1px 1px 0px 0px @color-swatch6;
+
+    .style--light & {
+        background-color: @color--accent;
+        box-shadow: 1px 1px 0px 0px @color--dark;
+        color: @contrast--accent;
+    }
+
+    .style--accent & {
+        background-color: @color--dark;
+        box-shadow: 1px 1px 0px 0px @color--dark;
+        color: @contrast--dark;
+    }
+
+    .style--dark & {
+        background-color: @color--accent;
+        box-shadow: none;
+        color: @contrast--accent;
+    }
 }
 
 .widget.feature .feature-bgimg .content {
@@ -1979,10 +2657,22 @@ a.btn.ecombasket-summary-link {
   }
 }
 
-  .widget.clicktocall a:hover {
-    text-decoration: none;
-    background-color: @font-swatch7-background-color-hover;
-  }
+    .widget.clicktocall a:hover {
+        text-decoration: none;
+        background-color: @font-swatch7-background-color-hover;
+
+        .style--light & {
+            background-color: lighten(@color--accent, 10%);
+        }
+
+        .style--accent & {
+            background-color: lighten(@color--dark, 10%);
+        }
+
+        .style--dark & {
+            background-color: lighten(@color--accent, 10%);
+        }
+    }
 
   .widget.clicktocall {
     padding: 20px 0;
