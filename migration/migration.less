@@ -1,0 +1,43 @@
+
+// -------------------------------------------
+//  Migration Styles -
+//
+//  These changes allow rows to work with
+//  existing templates in BK10
+// -------------------------------------------
+
+
+
+// Template styling resets
+// ------------------------------------
+
+#migrated {
+
+    // Remove the canvas padding to allow rows to go full width
+    .canvas {
+        padding: 0;
+    }
+
+    // Re-add spacing back to the feature widget
+    .canvas > section {
+        padding: 30px;
+    }
+}
+
+
+
+// Re-add the reset styles
+// ------------------------------------
+
+#migrated {
+
+    #page-zones__main > .widget:not([data-name="row"]) {
+        margin-left: auto;
+        margin-right: auto;
+        width: ~"calc(100% - 60px)";
+
+        &:last-child {
+            margin-bottom: 30px;        // Re-add main zone bottom spacing
+        }
+    }
+}
