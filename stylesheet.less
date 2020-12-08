@@ -407,9 +407,6 @@ p, ul, ol, li, .contentgroup__body {
 }
 
 label:not(.clicktocall__label), .label-text {
-    font-family: @font__h4--font-family;
-    font-size: 0.9em;
-    color: @color-text--faded;
     word-wrap: normal;
 
     .style--light & {
@@ -1151,7 +1148,7 @@ input, textarea {
     }
 
     .style--accent & {
-        border-color: darken(@color--accent 15%);
+        border-color: darken(@color--accent, 15%);
     }
 
     .style--dark & {
@@ -1166,7 +1163,7 @@ input, textarea {
         }
 
         .style--accent & {
-            border-color: darken(@color--accent 27%);
+            border-color: darken(@color--accent, 27%);
         }
 
         .style--dark & {
@@ -1182,7 +1179,7 @@ input, textarea {
         }
 
         .style--accent & {
-            border-color: darken(@color--accent 34%);
+            border-color: darken(@color--accent, 34%);
         }
 
         .style--dark & {
@@ -1193,7 +1190,6 @@ input, textarea {
 
 // Placeholders
 ::-webkit-input-placeholder {
-   color: @color-text--light;
 
    .style--light & {
         color: @contrast--light;
@@ -1209,7 +1205,6 @@ input, textarea {
 }
 
 :-moz-placeholder { /* Firefox 18- */
-   color: @color-text--light;
 
    .style--light & {
         color: @contrast--light;
@@ -1225,7 +1220,6 @@ input, textarea {
 }
 
 ::-moz-placeholder {  /* Firefox 19+ */
-   color: @color-text--light;
 
    .style--light & {
         color: @contrast--light;
@@ -1241,7 +1235,6 @@ input, textarea {
 }
 
 :-ms-input-placeholder {
-   color: @color-text--light;
 
    .style--light & {
         color: @contrast--light;
@@ -1915,7 +1908,7 @@ footer.bk-footer .widget.profile .twitter span {
         }
 
         .style--accent & {
-            border-color: darken(@color--accent 20%);
+            border-color: darken(@color--accent, 20%);
         }
 
         .style--dark & {
@@ -2213,7 +2206,7 @@ select {
 
     .style--accent & {
         background-color: @color--accent;
-        border-color: darken(@color--accent 20%);
+        border-color: darken(@color--accent, 20%);
         color: @contrast--accent;
     }
 
