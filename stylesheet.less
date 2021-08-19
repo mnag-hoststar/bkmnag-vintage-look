@@ -374,6 +374,8 @@ body {
    =============================== */
 
 h1, h2, h3, h4, h5, h6, [class*="contentgroup__h"] {
+    word-break: break-word;
+
     .style--light & {
         color: @contrast--light;
     }
@@ -915,6 +917,7 @@ blockquote {
     background-color: @color-swatch2;
     border-left: 1px solid @color-swatch3;
     font-style: italic;
+    word-break: break-word;
 
     .style--light & {
         background-color: fade(@color--accent, 10%); 
