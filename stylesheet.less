@@ -449,10 +449,6 @@ header.bk-header {
   padding-top: 15px;
 }
 
-.widget.companyname, .brand, .welcome-text {
-  //display: inline-block;
-}
-
 .brand {
   width: 100%;
   vertical-align: top;
@@ -953,6 +949,7 @@ blockquote {
     img {
         border-radius: 50%;
     }
+
     p {
         color: @color-swatch4;
         padding: 0;
@@ -969,6 +966,7 @@ blockquote {
             color: @contrast--dark;
         }
     }
+
     li {
         border-bottom: darken(@color-swatch1,10%);
 
@@ -1006,17 +1004,20 @@ blockquote {
             color: fade(@contrast--dark, 80%);
         }
     }
+
   // Tweet Content
+
   .twitter-profile-pic {
     float: left;
-    display: inline-block;
     vertical-align: top;
     width: 20%;
     max-width: 100px;
     margin-right: 5%;
   }
+
   .twitter-content {
     float: none;
+
     span.bk-full-name {
         color: @font-swatch4-color;
         font-family: @font-swatch4-font-family;
@@ -1051,7 +1052,9 @@ blockquote {
             }
         }
     }
+
     // Tweet Link
+
     p a {
         color: @color-swatch3;
         font-family: @font-swatch5-font-family;
@@ -1086,8 +1089,10 @@ blockquote {
             }
         }
     }
+
     span a {
         text-decoration: none;
+        
         &:hover {
             color: @color-swatch2;
             text-decoration: none;
@@ -1105,13 +1110,16 @@ blockquote {
             }
         }
     }
+
     p {
       margin-top: 4px;
       &:last-child {
         font-weight: inherit;
       }
     }
+
     // Extra Info
+
     span, span a, p:last-child {
         font-size: 13px;
         color: @color-swatch3;
@@ -1237,8 +1245,8 @@ select {
 }
 
 // Placeholders
-::-webkit-input-placeholder {
 
+::-webkit-input-placeholder {
    .style--light & {
         color: @contrast--light;
     }
@@ -1253,7 +1261,6 @@ select {
 }
 
 :-moz-placeholder { /* Firefox 18- */
-
    .style--light & {
         color: @contrast--light;
     }
@@ -1268,7 +1275,6 @@ select {
 }
 
 ::-moz-placeholder {  /* Firefox 19+ */
-
    .style--light & {
         color: @contrast--light;
     }
@@ -1283,7 +1289,6 @@ select {
 }
 
 :-ms-input-placeholder {
-
    .style--light & {
         color: @contrast--light;
     }
@@ -1384,7 +1389,6 @@ hr.line {
     }
 }
 
-
 /* ===============================
    MAP
    =============================== */
@@ -1392,8 +1396,6 @@ hr.line {
 .widget.map {
     margin: 20px 0;
 }
-
-
 
 /* ===============================
    CONTACT FORM WIDGET
@@ -1452,6 +1454,7 @@ hr.line {
 
 .widget.contactform fieldset button.btn {
     padding: 8px 30px;
+
     @media @mobile {
         width: 100%;
     }
@@ -1612,7 +1615,6 @@ hr.line {
     }
 }
 
-
 /* LATEST TWEET */
 
 .widget.profile .widget.twitter a {
@@ -1672,10 +1674,9 @@ footer.bk-footer .widget.profile .twitter span {
 }
 
 .twitter div.twitter-profile-pic a,
-  div.twitter-profile-pic {
+div.twitter-profile-pic {
     line-height: 0;
-  }
-
+}
 
 /* ===============================
    IMAGE WIDGET
@@ -1696,7 +1697,6 @@ footer.bk-footer .widget.profile .twitter span {
         color: @contrast--dark;
     }
 }
-
 
 /* ===============================
    SLIDESHOW WIDGET
@@ -2080,6 +2080,7 @@ footer.bk-footer .widget.profile .twitter span {
         }
         .menu-item-price {
             padding: 10px 0;
+
             p {
                 color: @color-swatch5;
                 padding: 0;
@@ -2094,7 +2095,9 @@ footer.bk-footer .widget.profile .twitter span {
                 box-shadow: 1px 1px 0px 0px @color-swatch6;
             }
         }
+
         // Menu Subsection
+
         .menu-subsection {
             padding: 0;
             margin: 0;
@@ -2239,14 +2242,14 @@ footer.bk-footer .widget.profile .twitter span {
 }
 
 .productlist-item-count {
-  clear: both;
+    clear: both;
 }
 
 .widget.ecomproduct .ecom-product .ecom-product-cattag {
-  margin: 10px 0 10px;
-  display: block;
-  float: left;
-  width: 100%;
+    margin: 10px 0 10px;
+    display: block;
+    float: left;
+    width: 100%;
 }
 
 // Ecom Basket
@@ -2257,6 +2260,7 @@ footer.bk-footer .widget.profile .twitter span {
         margin: 0;
         border: none;
         background-color: @font-swatch7-background-color;
+        
         p {
           font-family: @font-swatch7-font-family;
           font-size: @font-swatch7-font-size;
@@ -2265,22 +2269,27 @@ footer.bk-footer .widget.profile .twitter span {
           text-decoration: none;
           letter-spacing: 1px;
         }
+
         &:hover {
           background-color: @font-swatch7-background-color-hover;
           cursor: pointer;
         }
     }
+
     .ecombasket-list-container {
         margin: 1em 0 2em;
         border: 1px solid fade(@color-swatch3,25%);
         padding: 1.2em 2em 2em;
+
         ul {
             li {
                 border-bottom: 1px dotted fade(@color-swatch3,25%);
+
                 .ecombasket-item-image {
                     width: 96px;
                     height: 96px;
                 }
+
                 .ecombasket-item-info {
                     .ecombasket-item-title, .ecombasket-remove-button {
                         color: @color-swatch3;
@@ -2290,6 +2299,7 @@ footer.bk-footer .widget.profile .twitter span {
                         border: none;
                         margin: 0;
                         padding: 0;
+
                         &:hover {
                             text-decoration: underline;
                         }
@@ -2301,15 +2311,16 @@ footer.bk-footer .widget.profile .twitter span {
 }
 
 a.btn.ecombasket-summary-link {
-  display: inline-block;
-  text-decoration: none;
-  padding: 9px 20px;
-  margin: 1em 0;
-  background-color: @font-swatch7-background-color;
-  color: @font-swatch7-color;
-  &:hover {
-    background-color: @font-swatch7-background-color-hover;
-  }
+    display: inline-block;
+    text-decoration: none;
+    padding: 9px 20px;
+    margin: 1em 0;
+    background-color: @font-swatch7-background-color;
+    color: @font-swatch7-color;
+
+    &:hover {
+        background-color: @font-swatch7-background-color-hover;
+    }
 }
 
 // Ecom Basket Summary
@@ -2318,6 +2329,7 @@ a.btn.ecombasket-summary-link {
   font-family: @font-swatch7-font-family;
   font-size: @font-swatch7-font-size;
   font-weight: @font-swatch7-font-weight;
+
   &:hover {
     text-decoration: none;
   }
@@ -2331,18 +2343,23 @@ a.btn.ecombasket-summary-link {
         color: @color-swatch4;
         margin-bottom: 20px;
         margin-top: 10px;
+
         tr:first-child {
             outline: 1px solid @color-swatch7;
+
             @media @mobile {
                 display: table-header-group;
+
                 th:nth-child(2) {
                     display: none;
                 }
+
                 th:nth-child(3) {
                     padding-left: 12px;
                 }
             }
         }
+
         th {
             font-family: @font-swatch4-font-family;
             font-size: bkscale(@font-swatch4-font-size, 0.85);
@@ -2350,45 +2367,56 @@ a.btn.ecombasket-summary-link {
             padding-bottom: 2px;
             text-align: left;
         }
+
         .basket-summary-items {
             background: transparent;
+
             td {
                 border-bottom: 1px solid @color-swatch7;
             }
+
             td:first-child {
                 width: 20%;
                 vertical-align: middle;
                 padding: 20px 0;
             }
+
             @media @mobile {
                 display: table-row-group;
                 + tr {
                     display: block;
                 }
             }
+
             &:last-child {
                 td {
                     padding-bottom: 25px;
                 }
             }
+
             .image-wrap {
                 background-position: -9999px;
                 background-size: contain;
                 max-width: 150px;
             }
+
             td:nth-child(2) {
                 padding: 15px 0;
             }
+
             .basket-summary-pricepu, .basket-summary-quantity, .basket-summary-amount {
                 font-size: @font-swatch5-font-size;
                 line-height: @font-swatch5-line-height;
             }
+
             .basket-summary-pricepu {
                 display: block;
             }
+
             .basket-summary-quantity {
                 display: inline-block;
                 margin: 10px 0;
+
                 button {
                     height: 22px;
                     width: 22px;
@@ -2396,16 +2424,20 @@ a.btn.ecombasket-summary-link {
                     line-height: initial;
                 }
             }
+
             .basket-summary-quantitybtn {
                 display: block;
+
                 span {
                     padding: 0 10px;
                 }
             }
+
             .basket-summary-amount {
                 color: darken(@color-swatch4, 10%);
             }
         }
+
         .basket-summary-subtotal {
             border: 2px solid @color-swatch3;
             color: @color-swatch3;
@@ -2424,15 +2456,15 @@ a.btn.ecombasket-summary-link {
 }
 
 .widget.ecomproduct .ecom-product .ecom-product-preview-image-wrap {
-  text-align: left;
+    text-align: left;
 }
 
 .widget.ecomproduct .ecom-product .ecom-product-go-to-checkout-btn {
-  color: @color-swatch1;
-  margin: 10px 0;
-  float: left;
-  padding: 0 12px;
-  font-weight: 600;
+    color: @color-swatch1;
+    margin: 10px 0;
+    float: left;
+    padding: 0 12px;
+    font-weight: 600;
 }
 
 
@@ -2442,12 +2474,11 @@ a.btn.ecombasket-summary-link {
 
 @media only screen and (max-width: 768px) {
 
- /* DEFAULT PAGE TYPE */
- 
-.bk-pt-default {
-    padding-top: 0;
-}
+    /* DEFAULT PAGE TYPE */
 
+    .bk-pt-default {
+        padding-top: 0;
+    }
 
 
     .widget.extendednavigation .bk-overlay {
@@ -2457,40 +2488,36 @@ a.btn.ecombasket-summary-link {
         height: 40px;
     }
 
-.inner-bg {
-  margin: 0 auto;
-  border: none;
-}
-
-  header.bk-header {
-    padding: 20px 0 10px;
-    border-bottom: 0;
-    border-top: 5px solid @color-swatch3;
-  }
-
-  .brand {
-    display: block;
-    width: 100%;
-    margin-bottom: 18px;
-  }
-
-  .widget.logo {
-    display: block;
-    margin-right: 0;
-    margin-bottom: 20px;
-    padding: 0;
-    float: none;
-    a img {
-      display: block;
-      margin: 20px auto 0;
+    .canvas {
+        max-width: 1010px;
+        width: 95%;
+        margin: 0 auto;
+        padding: 10px;
     }
-  }
 
-  .widget.companyname {
-    display: block;
-    margin-top: 10px;
-    text-align: center;
-  }
+    .inner-bg {
+        margin: 0 auto;
+        border: none;
+    }
+
+    header.bk-header {
+        padding: 20px 0 10px;
+        border-bottom: 0;
+        border-top: 5px solid @color-swatch3;
+    }
+
+    .brand {
+        display: block;
+        width: 100%;
+        margin-bottom: 18px;
+    }
+
+    .widget.logo {
+        display: block;
+        margin-right: 0;
+        margin-bottom: 20px;
+        padding: 0;
+        float: none;
 
         a img {
             display: block;
@@ -2579,23 +2606,23 @@ a.btn.ecombasket-summary-link {
     }
 
     .widget.extendednavigation ul li:hover > ul > li > a .text {
-    background-image: image('/images/arrow-left.png');
-  }
+        background-image: image('/images/arrow-left.png');
+    }
 
     .widget.extendednavigation ul li:hover > ul > li:hover > a .text {
-    background-image: image('/images/arrow-left-hov.png');
-  }
+        background-image: image('/images/arrow-left-hov.png');
+    }
 
-  .widget.extendednavigation ul li:hover > ul {
-      display: block!important;
-      width: 100%;
-      margin: 0;
-      padding: 0;
-  }
+    .widget.extendednavigation ul li:hover > ul {
+        display: block!important;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
 
-  .widget.extendednavigation li:hover > ul > li > a {
-    padding-left: 10px;
-  }
+    .widget.extendednavigation li:hover > ul > li > a {
+        padding-left: 10px;
+    }
 
     .productlist-display-form .form-group {
         float: none;
@@ -2614,64 +2641,65 @@ a.btn.ecombasket-summary-link {
 
 @media only screen and (max-width: 480px) {
 
+    /* COMPANY HEADER */
 
- /* COMPANY HEADER */
-  .widget.companyname a {
-    font-size: bkscale(@font-swatch1-font-size, 0.75);
-    line-height: bkscale(@font-swatch1-font-size, 0.85);
-  }
-
-  /* CLICK TO CALL */
-
-.widget.clicktocall {
-  padding: 10px 0;
-}
-
-.widget.clicktocall a {
-    background-image: image('/images/ic-desktop-call.png');
-    background-position: 10px;
-    background-repeat: no-repeat;
-    padding: 10px 10px 10px 38px;
-    margin: 2.2em auto;
-    border: 0;
-    font-family: @font-swatch7-font-family;
-    font-size: @font-swatch7-font-size;
-    font-weight:@font-swatch7-font-weight;
-    background-color: @font-swatch7-background-color;
-    color: @font-swatch7-color;
-    text-decoration: none;
-    cursor: pointer;
-    box-shadow: 1px 1px 0px 0px @color-swatch6;
-
-    .style--light & {
-        background-color: @color--accent;
-        box-shadow: 1px 1px 0px 0px @color--dark;
-        color: @contrast--accent;
+    .widget.companyname a {
+        font-size: bkscale(@font-swatch1-font-size, 0.75);
+        line-height: bkscale(@font-swatch1-font-size, 0.85);
     }
 
-    .style--accent & {
-        background-color: @color--dark;
-        box-shadow: 1px 1px 0px 0px @color--dark;
-        color: @contrast--dark;
+    /* CLICK TO CALL */
+
+    .widget.clicktocall {
+        padding: 10px 0;
     }
 
-    .style--dark & {
-        background-color: @color--accent;
-        box-shadow: none;
-        color: @contrast--accent;
-    }
-}
+    .widget.clicktocall a {
+        background-image: image('/images/ic-desktop-call.png');
+        background-position: 10px;
+        background-repeat: no-repeat;
+        padding: 10px 10px 10px 38px;
+        margin: 2.2em auto;
+        border: 0;
+        font-family: @font-swatch7-font-family;
+        font-size: @font-swatch7-font-size;
+        font-weight:@font-swatch7-font-weight;
+        background-color: @font-swatch7-background-color;
+        color: @font-swatch7-color;
+        text-decoration: none;
+        cursor: pointer;
+        box-shadow: 1px 1px 0px 0px @color-swatch6;
 
-.widget.feature .feature-bgimg .content {
-  h3 {
-      font-size: bkscale(@font-swatch9-font-size, 0.75);
-      line-height: bkscale(@font-swatch9-line-height, 0.85);
-  }
-  button {
-    padding: 8px 12px;
-    width: 100%;
-  }
-}
+        .style--light & {
+            background-color: @color--accent;
+            box-shadow: 1px 1px 0px 0px @color--dark;
+            color: @contrast--accent;
+        }
+
+        .style--accent & {
+            background-color: @color--dark;
+            box-shadow: 1px 1px 0px 0px @color--dark;
+            color: @contrast--dark;
+        }
+
+        .style--dark & {
+            background-color: @color--accent;
+            box-shadow: none;
+            color: @contrast--accent;
+        }
+    }
+
+    .widget.feature .feature-bgimg .content {
+        h3 {
+            font-size: bkscale(@font-swatch9-font-size, 0.75);
+            line-height: bkscale(@font-swatch9-line-height, 0.85);
+        }
+
+        button {
+            padding: 8px 12px;
+            width: 100%;
+        }
+    }
 
     .widget.clicktocall a:hover {
         text-decoration: none;
@@ -2690,8 +2718,8 @@ a.btn.ecombasket-summary-link {
         }
     }
 
-  .widget.clicktocall {
-    padding: 20px 0;
-    display:block;
-  }
+    .widget.clicktocall {
+        padding: 20px 0;
+        display:block;
+    }
 }
