@@ -2606,14 +2606,14 @@ a.btn.ecombasket-summary-link {
             outline: 1px solid @color-swatch7;
 
             @media @mobile {
-                display: table-header-group;
+                display: none;
+            }
+        }
 
-                th:nth-child(2) {
-                    display: none;
-                }
-
-                th:nth-child(3) {
-                    padding-left: 12px;
+        tr:last-child {
+            td {
+                @media @mobile {
+                    display: block;
                 }
             }
         }
@@ -2629,20 +2629,36 @@ a.btn.ecombasket-summary-link {
         .basket-summary-items {
             background: transparent;
 
+            @media @mobile {
+                display: block;
+            }
+
             td {
                 border-bottom: 1px solid @color-swatch7;
+
+                @media @mobile {
+                    display: block;
+                }
             }
 
             td:first-child {
                 width: 20%;
                 vertical-align: middle;
                 padding: 20px 0;
+
+                @media @mobile {
+                    width: 100%;
+                    border-bottom: none;
+                }
             }
 
-            @media @mobile {
-                display: table-row-group;
-                + tr {
-                    display: block;
+            td:nth-child(2) {
+                padding: 20px;
+
+                @media @mobile {
+                    padding: 0 0 10px;
+                    border-bottom: none;
+                    width: 100%;
                 }
             }
 
@@ -2656,13 +2672,15 @@ a.btn.ecombasket-summary-link {
                 background-position: -9999px;
                 background-size: contain;
                 max-width: 150px;
+
+                @media @mobile {
+                    margin: 0 auto;
+                }
             }
 
-            td:nth-child(2) {
-                padding: 20px;
-            }
-
-            .basket-summary-pricepu, .basket-summary-quantity, .basket-summary-amount {
+            .basket-summary-pricepu,
+            .basket-summary-quantity,
+            .basket-summary-amount {
                 font-size: @font-swatch5-font-size;
                 line-height: @font-swatch5-line-height;
             }
@@ -2693,6 +2711,12 @@ a.btn.ecombasket-summary-link {
 
             .basket-summary-amount {
                 color: darken(@color-swatch4, 10%);
+
+                @media @mobile {
+                    display: block;
+                    width: 100%;
+                    text-align: right;
+                }
             }
         }
 
@@ -2706,10 +2730,21 @@ a.btn.ecombasket-summary-link {
     }
 }
 
-.basket-summary-submit, .basket-summary-empty-cta {
+.basket-summary-submit,
+.basket-summary-empty-cta {
     display: inline-block;
     padding: 8px 30px;
     margin-bottom: 15px;
+}
+
+.basket-summary-continue-shopping + .basket-summary-submit,
+.basket-summary-continue-shopping {
+    @media @mobile {
+        margin-left: 0;
+        margin-bottom: 0;
+        text-align: center;
+        width: 100%;
+    }
 }
 
 .widget.ecomproduct .ecom-product .ecom-product-preview-image-wrap {
@@ -2721,4 +2756,10 @@ a.btn.ecombasket-summary-link {
     margin: 20px 0 0;
     line-height: 22px;
     text-align: center;
+
+    @media @mobile {
+        margin-left: 0;
+        text-align: center;
+        width: 100%;
+    }
 }
