@@ -1685,7 +1685,11 @@ hr.line {
     margin-bottom: 1.5em;
 }
 
-.contactform label, .advancedcontactform label {
+.contactform label,
+.advancedcontactform label,
+.signupform label {
+    display: block;
+    margin-bottom: 10px;
     font-family:@font-swatch5-font-family;
     font-size:@font-swatch5-font-size;
     font-weight:@font-swatch5-font-weight;
@@ -1753,29 +1757,6 @@ hr.line {
     padding: 0;
     border: 0;
     margin: 0;
-}
-
-.widget.signupform label {
-    display: block;
-    margin-bottom: 8px;
-    font-family:@font-swatch4-font-family;
-    font-size:@font-swatch4-font-size;
-    font-weight: @font-swatch4-font-weight;
-    color: @font-swatch4-color;
-    line-height:@font-swatch4-line-height;
-    letter-spacing: @font-swatch4-letter-spacing;
-
-    .style--light & {
-        color: @contrast--light;
-    }
-
-    .style--accent & {
-        color: @contrast--accent;
-    }
-
-    .style--dark & {
-        color: @contrast--dark;
-    }
 }
 
 .widget.signupform fieldset input,
