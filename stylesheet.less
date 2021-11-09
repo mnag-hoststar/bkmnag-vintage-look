@@ -493,10 +493,11 @@ header.bk-header {
 
 .widget.companyname {
     vertical-align: middle;
+    word-wrap: break-word;
 
     @media @tablet {
         display: block;
-        margin-top: 10px;
+        margin: 10px 40px 0;
         text-align: center;
     }
 }
@@ -616,7 +617,6 @@ div.widget.extendednavigation {
         width: 100%;
         padding: 0;
         display: block;
-        float: left;
         width: 100%;
     }
 
@@ -630,18 +630,40 @@ div.widget.extendednavigation {
     }
 
     ul {
-        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 10px 40px;
         margin: 0;
 
         @media @tablet {
             width: 100%;
             display: none;
             margin: 0;
+            padding: 10px;
+        }
+
+        &.align-left,
+        &.align-center,
+        &.align-right {
+            float: none;
+        }
+
+        &.align-left {
+            justify-content: start;
+        }
+
+        &.align-center {
+            justify-content: center;
+        }
+
+        &.align-right {
+            justify-content: end;
         }
 
         li {
             display: inline-block;
-            padding: 18px 0 20px 0;
+            padding: 5px 0;
 
             @media @tablet {
                 padding: 12px 0;
@@ -692,7 +714,7 @@ div.widget.extendednavigation {
             ul li.folder {
                 display: inline-block;
                 background-image: image('/images/arrow-down.png');
-                background-position: right center;
+                background-position: right 15px center;
                 background-repeat: no-repeat;
                 padding-right: 8px;
                 height: 100%;
@@ -722,7 +744,7 @@ div.widget.extendednavigation {
             a,
             &.folder .text {
                 display: block;
-                padding: 1px 25px;
+                padding: 1px 22px;
                 font-family:@font-swatch6-font-family;
                 font-size:@font-swatch6-font-size;
                 font-weight: @font-swatch6-font-weight;
@@ -731,7 +753,6 @@ div.widget.extendednavigation {
                 letter-spacing: @font-swatch6-letter-spacing;
 
                 @media @tablet {
-                    padding: 18px 0 20px 0;
                     margin: 0;
                 }
             }
@@ -739,16 +760,15 @@ div.widget.extendednavigation {
             .text,
             &.folder .text {
                 @media @tablet {
-                    padding-left: 15px;
-                    background-image: image('/images/arrow-left.png');
                     background-position: left center;
                     background-repeat: no-repeat;
+                    word-wrap: break-word;
                 }
             }
 
-            &.folder ul .text {
+            &.folder .text {
                 @media @tablet {
-                    padding: 5px 15px 0;
+                    padding-right: 22px;
                 }
             }
         
