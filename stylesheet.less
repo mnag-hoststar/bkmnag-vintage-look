@@ -1793,6 +1793,11 @@ hr.line {
     &:focus {
         box-shadow: none;
     }
+    
+    .responsivecolumns & {
+        width: 100%;
+        margin: 0 0 10px;
+    }
 }
 
 .widget.signupform fieldset input:focus {
@@ -2222,13 +2227,21 @@ div.twitter-profile-pic {
 }
 
 .blog-post-more-link {
-    margin: 10px 0;
+    margin: 0 0 10px;
+    padding: 0;
+
     a {
-        color: @font-swatch7-color;
-        background-color: @font-swatch7-background-color;
+        display: inline-block;
+        margin: 10px 0;
         padding: 8px 30px;
         box-shadow: 1px 1px 0px 0px @color-swatch6;
-        margin: 10px 0;
+        font-family: @font-swatch7-font-family;
+        font-size: @font-swatch7-font-size;
+        font-weight:@font-swatch7-font-weight;
+        background-color: @font-swatch7-background-color;
+        background: @font-swatch7-background-color;
+        color: @font-swatch7-color;
+        text-shadow: 1px 1px 0px @color-swatch6;
 
         .style--light & {
             background-color: @color--accent;
