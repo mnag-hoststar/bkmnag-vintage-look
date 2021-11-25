@@ -91,6 +91,7 @@ body {
 	&.language-selector--light {
         background-color: @color-swatch3;
 	}
+
 	&.language-selector--dark {
         background-color: @color-swatch2;
 	}
@@ -221,6 +222,7 @@ body {
 				}
 			}
 		}
+
 		.language-selector--dark& {
             background-color: @color-swatch3;
 			
@@ -235,6 +237,7 @@ body {
 			}
 		}
 	}
+
 	.language-selector.language-selector--dropdown & {
 		.language-selector--light& {
 			&, &--current {
@@ -245,6 +248,7 @@ body {
 				}
 			}
 		}
+
 		.language-selector--dark& {
 			&, &--current {
                 background-color: @color-swatch7;
@@ -287,15 +291,11 @@ body {
 		hyphens: auto;
 	}
 	
-	// Horizontal - Item
-	
 	.language-selector &,
 	.language-selector.language-selector--horizontal & {
 		text-align: right;
 		display: inline-block;
 	}
-	
-	// Dropdown - Item
 	
 	.language-selector.language-selector--dropdown & {
 		padding-right: @language-padding*4;
@@ -304,8 +304,6 @@ body {
             height: auto;
         }
 	}
-	
-	// Link Color
 	
 	.language-selector &,
 	.language-selector .language-selector__item--current &,
@@ -477,7 +475,7 @@ header.bk-header {
     }
 }
 
-/* COMPANY NAME */
+// COMPANY NAME
 
 .widget.companyname {
     vertical-align: middle;
@@ -490,7 +488,7 @@ header.bk-header {
     }
 }
 
-/* COMPANY HEADER */
+// COMPANY HEADER
 
 .widget.companyname a {
     @media @mobile {
@@ -499,7 +497,7 @@ header.bk-header {
     }
 }
 
-/* LOGO */
+// LOGO
 
 .widget.logo {
   padding: 0;
@@ -942,9 +940,7 @@ div.widget.extendednavigation {
     }
 }
 
-
 // PAYPAL BUTTON
-
 
 .widget.paypalbuynow .widget.button.paypal {
     box-shadow: 1px 1px 0px 0px @color-swatch6;
@@ -961,7 +957,6 @@ div.widget.extendednavigation {
         box-shadow: none;
     }
 }
-
 
 // TWEET BUTTON
 
@@ -982,7 +977,6 @@ div.widget.extendednavigation {
     }
 }
 
-
 // DROPBOX WIDGET
 
 .widget.dropbox .b-wrap .btn {
@@ -1002,7 +996,6 @@ div.widget.extendednavigation {
 }
 
 // BUTTON CSS
-
 
 .widget.button button, .btn,
 .contactform button, .contactform button.btn, 
@@ -1061,9 +1054,7 @@ div.widget.extendednavigation {
     }
 }
 
-
 // CLICK TO CALL WIDGET
-
 
 .widget.clicktocall {
     padding: 10px 0;
@@ -1780,7 +1771,7 @@ hr.line {
     font-weight: @font-swatch7-font-weight;
     letter-spacing: @font-swatch7-letter-spacing;
     font-size: 1em;
-    text-align: center!important;
+    text-align: center !important;
     text-decoration: none;
     vertical-align: top;
 }
@@ -1833,7 +1824,7 @@ hr.line {
     }
 }
 
-/* LATEST TWEET */
+// LATEST TWEET
 
 .widget.profile .widget.twitter a {
     color: @color-swatch4;
