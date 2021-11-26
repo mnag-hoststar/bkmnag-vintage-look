@@ -2354,8 +2354,39 @@ div.twitter-profile-pic {
 // Ecommerce
 
 .widget.ecomproductslist  {
-    .ecom-productslist-products {
-        margin-left: 0;
+    .ecom-productslist {
+        &-products {
+            margin-left: 0;
+            max-width: none;
+            overflow: hidden;
+        }
+
+        &-product {
+            display: block;
+            float: left;
+            width: 100%/3;
+            margin: 0 0 30px;
+            margin-bottom: 30px;
+            padding: 10px;
+            overflow: auto;
+            
+            @media @tablet {
+                width: 100%/2;
+            }
+            
+            @media @mobile {
+                width: 100%;
+            }
+
+            .responsivecolumns & {
+                width: 100%;
+            }
+        }
+
+        &-image-wrap {
+            background-position: center;
+            margin-bottom: 20px;
+        }
     }
 
     .productlist-filter {
@@ -2374,6 +2405,10 @@ div.twitter-profile-pic {
                 box-sizing: border-box;
 				flex-grow: 1;
 				width: 100%/3;
+
+                .responsivecolumns & {
+					width: 100%;
+                }
 					
 				@media @mobile {
 					width: 100%;
@@ -2382,6 +2417,14 @@ div.twitter-profile-pic {
                 label {
                     display: block;
                     padding-bottom: .4em;
+                }
+
+                select {
+                    width: 100%;
+
+                    .responsivecolumns & {
+                        width: 100%;
+                    }
                 }
 
                 button.btn {
@@ -2404,6 +2447,10 @@ div.twitter-profile-pic {
 		
 					input {
 						flex-grow: 1;
+
+                        .responsivecolumns & {
+                            width: 100%;
+                        }
 					
 						@media @mobile {
 							width: 100%;
@@ -2412,8 +2459,16 @@ div.twitter-profile-pic {
                     }
 				
 					.btn {
+                        .responsivecolumns & {
+                            position: static;
+                            margin: 10px 0;
+                            width: 100%;
+                        }
+
 						@media @mobile {
-							width: 100%;
+                            position: static;
+                            margin: 10px 0;
+                            width: 100%;
 						}
 					}
                 }
