@@ -1018,6 +1018,7 @@ div.widget.extendednavigation {
     color: @font-swatch7-color;
     text-decoration: none;
     cursor: pointer;
+    word-break: break-word;
 
     .style--light & {
         background-color: @color--accent;
@@ -1761,19 +1762,23 @@ hr.line {
 .widget.profile form fieldset button,
 .widget.blogsearch button {
     width: 20%;
+    height: auto;
     min-height: 40px;
-    line-height: 40px;
-    height: 40px;
+    line-height: 1.25em;
     margin: 0 0 0 -4px;
     padding: 0 40px;
     border: 0;
     font-family: @font-swatch7-font-family;
     font-weight: @font-swatch7-font-weight;
     letter-spacing: @font-swatch7-letter-spacing;
-    font-size: 1em;
     text-align: center !important;
     text-decoration: none;
     vertical-align: top;
+    
+    .responsivecolumns & {
+        width: 100%;
+        margin: 0;
+    }
 }
 
 .widget.signupform button:hover {
