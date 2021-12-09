@@ -1,5 +1,7 @@
 @import "@{templateCommon}/basekit-bootstrap.less";
 
+@mobile-small: ~"only screen and (max-width: 380px)";
+
 // MIXINS
 
 .appearance(@appearance: none) {
@@ -21,7 +23,7 @@ body {
     margin: 0 auto;
 }
 
-@media only screen and (max-width: 770px) {
+@media @tablet {
     .wrapper {
         width: 95%;
         margin: 2% auto;
@@ -373,7 +375,7 @@ body {
 		text-overflow: ellipsis;
 		
 		.language-selector--flag-text& {
-			@media only screen and (max-width: 380px) {
+			@media @mobile-small {
 				display: none;
 			}
 		}
