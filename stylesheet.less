@@ -10,7 +10,15 @@
     appearance: @appearance;
 }
 
-// TEMPLATE STYLES
+.transition (@prop: all, @time: 0.5s, @ease: ease) {
+    -webkit-transition: @prop @time @ease;
+    -moz-transition: @prop @time @ease;
+    -ms-transition: @prop @time @ease;
+    -o-transition: @prop @time @ease;
+    transition: @prop @time @ease;
+}
+
+// MAIN
 
 body {
     background-color: @color-swatch2;
@@ -21,16 +29,12 @@ body {
 .wrapper {
     width: 100%;
     margin: 0 auto;
-}
 
-@media @tablet {
-    .wrapper {
+    @media @tablet {
         width: 95%;
         margin: 2% auto;
     }
 }
-
-// CUSTOM CSS
 
 .canvas {
     background-color: @color-swatch1;
@@ -63,12 +67,69 @@ body {
     }
 }
 
-.transition (@prop: all, @time: 0.5s, @ease: ease) {
-    -webkit-transition: @prop @time @ease;
-    -moz-transition:    @prop @time @ease;
-    -ms-transition:     @prop @time @ease;
-    -o-transition:      @prop @time @ease;
-    transition:         @prop @time @ease;
+// TYPOGRAPHY
+
+h1, h2, h3, h4, h5, h6, [class*="contentgroup__h"] {
+    word-break: break-word;
+
+    .style--light & {
+        color: @contrast--light;
+    }
+
+    .style--accent & {
+        color: @contrast--accent;
+    }
+
+    .style--dark & {
+        color: @contrast--dark;
+    }
+}
+
+
+p, ul, ol, li, .contentgroup__body {
+    .style--light & {
+        color: fade(@contrast--light, 80%);
+    }
+
+    .style--accent & {
+        color: fade(@contrast--accent, 80%);
+    }
+
+    .style--dark & {
+        color: fade(@contrast--dark, 80%);
+    }
+}
+
+[data-name*="content"] a:not(.contentgroup__link) {
+    .style--light & {
+        color: @color--accent;
+    }
+
+    .style--accent & {
+        color: @contrast--accent;
+    }
+
+    .style--dark & {
+        color: @contrast--dark;
+    }
+}
+
+label:not(.clicktocall__label),
+.label-text {
+    word-wrap: normal;
+
+    .style--light & {
+        color: fade(@contrast--light, 80%);
+    }
+
+    .style--accent & {
+        color: fade(@contrast--accent, 80%);
+    }
+
+    .style--dark & {
+        color: fade(@contrast--dark, 80%);
+    }
+}
 }
 
 // LANGUAGE SELECTOR
@@ -382,68 +443,6 @@ body {
 	}
 }
 
-// TYPOGRAPHY
-
-h1, h2, h3, h4, h5, h6, [class*="contentgroup__h"] {
-    word-break: break-word;
-
-    .style--light & {
-        color: @contrast--light;
-    }
-
-    .style--accent & {
-        color: @contrast--accent;
-    }
-
-    .style--dark & {
-        color: @contrast--dark;
-    }
-}
-
-p, ul, ol, li, .contentgroup__body {
-    .style--light & {
-        color: fade(@contrast--light, 80%);
-    }
-
-    .style--accent & {
-        color: fade(@contrast--accent, 80%);
-    }
-
-    .style--dark & {
-        color: fade(@contrast--dark, 80%);
-    }
-}
-
-[data-name*="content"] a:not(.contentgroup__link) {
-    .style--light & {
-        color: @color--accent;
-    }
-
-    .style--accent & {
-        color: @contrast--accent;
-    }
-
-    .style--dark & {
-        color: @contrast--dark;
-    }
-}
-
-label:not(.clicktocall__label), .label-text {
-    word-wrap: normal;
-
-    .style--light & {
-        color: fade(@contrast--light, 80%);
-    }
-
-    .style--accent & {
-        color: fade(@contrast--accent, 80%);
-    }
-
-    .style--dark & {
-        color: fade(@contrast--dark, 80%);
-    }
-}
-
 // HEADER
 
 header.bk-header {
@@ -597,7 +596,7 @@ footer.bk-footer .widget.content {
     }
 }
 
-// EXTENDED NAVIGATION
+// NAVIGATION
 
 div.widget.extendednavigation {
     .clearfix;
@@ -1472,8 +1471,25 @@ select {
 .advancedcontactform .option-item--radio,
 .advancedcontactform .option-item--checkbox {
 	label {
-		label;
+        font-family:@font-swatch5-font-family;
+        font-size:@font-swatch5-font-size;
+        font-weight:@font-swatch5-font-weight;
+        line-height:@font-swatch5-line-height;
+        color:@font-swatch5-color;
+        letter-spacing: @font-swatch5-letter-spacing;
 		word-break: break-word;
+    
+        .style--light & {
+            color: @contrast--light;
+        }
+    
+        .style--accent & {
+            color: @contrast--accent;
+        }
+    
+        .style--dark & {
+            color: @contrast--dark;
+        }
 	}
 }
 
@@ -1827,60 +1843,66 @@ hr.line {
     }
 }
 
-// LATEST TWEET
+// LATEST TWEET FOOTER
 
-.widget.profile .widget.twitter a {
-    color: @color-swatch4;
-    font-size:@font-swatch5-font-size;
-    text-decoration: none;
-}
+.widget.profile {
+    .widget.twitter a {
+        color: @color-swatch4;
+        font-size:@font-swatch5-font-size;
+        text-decoration: none;
+    }
 
-.widget.profile a:hover {
-    text-decoration: none;
-}
+    footer.bk-footer & .twitter span {
+        display: inline;
+    }
 
-.widget.profile ul {
-    padding: 0;
-    margin: 0;
-}
+    a:hover {
+        text-decoration: none;
+    }
+    
+    ul {
+        padding: 0;
+        margin: 0;
 
-.widget.profile ul li {
-    border-bottom: none;
-    list-style: none;
-    font-family: @font-swatch5-font-family;
-    font-size: @font-swatch5-font-size;
-    color: @font-swatch5-color;
-}
+        li {
+            border-bottom: none;
+            list-style: none;
+            font-family: @font-swatch5-font-family;
+            font-size: @font-swatch5-font-size;
+            color: @font-swatch5-color;
+        }
+    }
 
-.widget.profile .twitter-profile-pic {
-    display: none;
-}
-
-.widget.profile .twitter-content span.bk-full-name {
-    font-family: @font-swatch4-font-family;
-    font-size: @font-swatch5-font-size;
-    color: darken(@color-swatch5,20%);
-}
-
-.widget.profile .twitter-content p {
-    padding: 0;
-    color: @color-swatch5;
-}
-
-.widget.profile .twitter-content span, .widget.profile .twitter-content time {
-    color: lighten(@color-swatch3,5%);
-}
-
-.widget.profile .twitter-content span a {
-    color: lighten(@color-swatch3,5%);
-    text-decoration: underline;
-}
-.widget.profile.twitter-content span a:hover {
-    color: @color-swatch3;
-}
-
-footer.bk-footer .widget.profile .twitter span {
-    display: inline;
+    .twitter-profile-pic {
+        display: none;
+    }
+    
+    .twitter-content {
+        span.bk-full-name {
+            font-family: @font-swatch4-font-family;
+            font-size: @font-swatch5-font-size;
+            color: darken(@color-swatch5,20%);
+        }
+    
+        p {
+            padding: 0;
+            color: @color-swatch5;
+        }
+        
+        span,
+        time {
+            color: lighten(@color-swatch3,5%);
+        }
+        
+        span a {
+            color: lighten(@color-swatch3,5%);
+            text-decoration: underline;
+        }
+    }
+        
+    &.twitter-content span a:hover {
+        color: @color-swatch3;
+    }
 }
 
 .twitter div.twitter-profile-pic a,
@@ -2041,32 +2063,34 @@ div.twitter-profile-pic {
 
 // Gallery
 
-.widget.gallery ul li span.inner {
-    .title {
-        color: @color-swatch1;
-        font-weight: @font-swatch3-font-weight;
-        font-size: @font-swatch4-font-size;
-        margin-bottom: 0.3em;
+.widget.gallery {
+    ul li span.inner {
+        .title {
+            color: @color-swatch1;
+            font-weight: @font-swatch3-font-weight;
+            font-size: @font-swatch4-font-size;
+            margin-bottom: 0.3em;
+        }
+
+        .description {
+            color: @color-swatch1;
+        }
     }
 
-    .description {
-        color: @color-swatch1;
+    .inner .image-data {
+        background: fade(@color-swatch4, 65%);
+        display: block;
+        opacity: 0;
+        height: auto;
+        bottom: 0;
+        position: absolute;
+        width: 100%;
     }
-}
-
-.widget.gallery .inner .image-data {
-    background: fade(@color-swatch4, 65%);
-    display: block;
-    opacity: 0;
-    height: auto;
-    bottom: 0;
-    position: absolute;
-    width: 100%;
-}
-
-.widget.gallery .inner:hover .image-data {
-    .transition( opacity, 0.5s, ease );
-    opacity: 1;
+    
+    .inner:hover .image-data {
+        .transition( opacity, 0.5s, ease );
+        opacity: 1;
+    }
 }
 
 // Embeds
@@ -2077,7 +2101,8 @@ div.twitter-profile-pic {
 
 // BLOG
 
-.blogpost, .blog-post-list {
+.blogpost,
+.blog-post-list {
     .blog-post-feature-image-wrap {
         line-height: 0;
         background-size: cover;
@@ -2242,7 +2267,8 @@ div.twitter-profile-pic {
     margin: 5px 0 8px;
 }
 
-.blog-post-category-label, .blog-post-tags-label {
+.blog-post-category-label,
+.blog-post-tags-label {
     &:after {
         content: ":";
         position: relative;
@@ -2276,82 +2302,81 @@ div.twitter-profile-pic {
 
 // MENU
 
-.widget {
-    &.menu {
-        margin: 20px 0;
+.widget.menu {
+    margin: 20px 0;
 
-        h4, .menu-item-nutritional-prop {
-            font-size: bkscale(@font-swatch5-font-size,0.9);
-        }
+    h4,
+    .menu-item-nutritional-prop {
+        font-size: bkscale(@font-swatch5-font-size,0.9);
+    }
 
-        .menu-header {
-            text-align: center;
-        }
+    .menu-header {
+        text-align: center;
+    }
 
-        .menu-items {
-            li {
+    .menu-items {
+        li {
+            display: block;
+            padding: 20px 0;
+
+            .inner-item {
                 display: block;
-                padding: 20px 0;
-
-                .inner-item {
-                    display: block;
-                    padding: 0;
-                    margin: 0;
-                }
-
-                &.menu-item-promoted {
-                    padding: 30px;
-                    border: 1px solid fade(@color-swatch3,30%);
-                }
-            }
-
-            .menu-item-image-wrap {
-                height: 200px;
-                background-size: cover;
-                background-position: center;
-                -webkit-background-size: cover;
-                -moz-background-size: cover;
-                -o-background-size: cover;
-                clear:both;
-                background-repeat: no-repeat;
-                background-position: center;
-
-                img {
-                    display: none;
-                }
-            }
-        }
-
-        .menu-item-price {
-            padding: 10px 0;
-
-            p {
-                color: @color-swatch5;
                 padding: 0;
+                margin: 0;
             }
-        }
-        
-        .menu-section-item-dietary-props {
-            .dietary-icon {
-                background-color: @color-swatch3;
-                font-size: bkscale(@font-swatch5-font-size,0.7);
-                color: @color-swatch1;
-                padding: 0px 10px;
-                box-shadow: 1px 1px 0px 0px @color-swatch6;
+
+            &.menu-item-promoted {
+                padding: 30px;
+                border: 1px solid fade(@color-swatch3,30%);
             }
         }
 
-        // Menu Subsection
+        .menu-item-image-wrap {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            clear:both;
+            background-repeat: no-repeat;
+            background-position: center;
 
-        .menu-subsection {
+            img {
+                display: none;
+            }
+        }
+    }
+
+    .menu-item-price {
+        padding: 10px 0;
+
+        p {
+            color: @color-swatch5;
             padding: 0;
-            margin: 0;
         }
-        
-        .wrapper {
-            width: 100%;
-            margin: 0;
+    }
+    
+    .menu-section-item-dietary-props {
+        .dietary-icon {
+            background-color: @color-swatch3;
+            font-size: bkscale(@font-swatch5-font-size,0.7);
+            color: @color-swatch1;
+            padding: 0px 10px;
+            box-shadow: 1px 1px 0px 0px @color-swatch6;
         }
+    }
+
+    // Menu Subsection
+
+    .menu-subsection {
+        padding: 0;
+        margin: 0;
+    }
+    
+    .wrapper {
+        width: 100%;
+        margin: 0;
     }
 }
 
