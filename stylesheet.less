@@ -3079,30 +3079,47 @@ div.twitter-profile-pic {
 
 // Single Product
 
-.widget.ecomproduct .ecom-product {
-    .ecom-product-cattag {
-        margin: 10px 0 10px;
-        display: block;
-        float: left;
-        width: 100%;
-    }
-
-    .ecom-product-preview-image-wrap {
-        text-align: left;
-    }
-
-    .btn {
-        min-width: 180px;
-        margin: 20px 0 0;
-        line-height: 22px;
-        text-align: center;
-
-        @media @mobile {
-            margin-left: 0;
-            text-align: center;
+.widget.ecomproduct {
+    .ecom-product {
+        .ecom-product-cattag {
+            margin: 10px 0 10px;
+            display: block;
+            float: left;
             width: 100%;
         }
+    
+        .ecom-product-preview-image-wrap {
+            text-align: left;
+        }
+    
+        .btn {
+            min-width: 180px;
+            margin: 20px 0 0;
+            line-height: 22px;
+            text-align: center;
+    
+            @media @mobile {
+                margin-left: 0;
+                text-align: center;
+                width: 100%;
+            }
+        }
     }
+
+    .product-actions {
+		button {
+			margin-bottom: 1em;
+			text-align: center;
+        
+			@media @mobile {
+				width: 100%;
+			}
+
+			&:before {
+				float: none;
+			}
+		}
+	}
 }
 
 // Basket
