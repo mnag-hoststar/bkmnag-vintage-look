@@ -213,17 +213,21 @@ table {
 	border-top: 1px solid @font-swatch5-color;
 	margin: 0;
 	hyphens: auto;
+	color: @font-swatch5-color;
 
 	.style--light & {
 		border-top-color: @contrast--light;
+		color: @contrast--light;
 	}
 
 	.style--accent & {
 		border-top-color: @contrast--accent;
+		color: @contrast--accent;
 	}
 
 	.style--dark & {
 		border-top-color: @contrast--dark;
+		color: @contrast--dark;
 	}
 }
 
@@ -2892,7 +2896,49 @@ div.twitter-profile-pic {
     }
 }
 
-// Ecommerce
+// E-COMMERCE
+
+// Categories
+
+.widget.ecomcategorieslist {
+	ul.product-category-items {
+		list-style: none;
+		padding: 0 10px;
+		margin: 0 auto 1em;
+		display: flex;
+		max-width: 800px;
+		flex-wrap: wrap;
+
+		@media @mobile {
+			padding: 0;
+		}
+
+		.responsivecolumns & {
+			padding: 0;
+		}
+
+		li {
+			width: 100%/3;
+			padding: 5px 10px;
+
+			@media @tablet {
+				width: 100%/2;
+			}
+
+			@media @mobile {
+				width: 100%;
+				padding: 5px 0;
+			}
+
+			.responsivecolumns & {
+				width: 100%;
+				padding: 5px 0;
+			}
+		}
+	}
+}
+
+// Product List
 
 .widget.ecomproductslist .ecom-productslist-products,
 .widget.ecomfeaturedproducts .ecom-featuredproducts-wrap {
@@ -3035,24 +3081,10 @@ div.twitter-profile-pic {
 // Image
 
 .widget.ecomproductslist .ecom-productslist-image-wrap,
-.widget.ecomfeaturedproducts .ecom-featuredproducts-image-wrap {
+.widget.ecomfeaturedproducts .ecom-featuredproducts-image-wrap,
+.widget.ecomfeaturedproducts .ecom-featuredproducts-wrap .ecom-featuredproducts-product .ecom-featuredproducts-image-wrap {
     background-position: center;
     margin-bottom: 20px;
-}
-
-.widget.ecomproductslist .ecom-productslist-image-wrap,
-.widget.ecomfeaturedproducts .ecom-featuredproducts-wrap .ecom-featuredproducts-product .ecom-featuredproducts-image-wrap {
-    .style--light & {
-        background-color: @color--light;
-    }
-
-    .style--accent & {
-        background-color: @color--accent;
-    }
-
-    .style--dark & {
-        background-color: @color--dark;
-    }
 }
 
 // Single Product
