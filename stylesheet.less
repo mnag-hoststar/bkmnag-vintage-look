@@ -2587,7 +2587,7 @@ div.twitter-profile-pic {
 			width: 100%;
 			padding-bottom: 100%;
 		}
-        
+
         span.inner {
             .title {
                 color: @color-swatch1;
@@ -2952,6 +2952,25 @@ div.twitter-profile-pic {
 				padding: 5px 0;
 			}
 		}
+
+        a,
+        a span {
+            .style--light & {
+                color: @contrast--light;
+            }
+        
+            .style--accent & {
+                color: @contrast--accent;
+            }
+        
+            .style--dark & {
+                color: @contrast--dark;
+            }
+        }
+		
+        a span {
+            padding-left: 0.25em;
+        }
 	}
 }
 
@@ -3048,21 +3067,6 @@ div.twitter-profile-pic {
                 }
             }
         }
-    }
-}
-
-.product-category-items a,
-.product-category-items span {
-    .style--light & {
-        color: @contrast--light;
-    }
-
-    .style--accent & {
-        color: @contrast--accent;
-    }
-
-    .style--dark & {
-        color: @contrast--dark;
     }
 }
 
