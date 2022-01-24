@@ -900,6 +900,14 @@ div.widget.extendednavigation {
         }
     }
 
+    // Mobile Menu
+
+    a.pull {
+        top: -36px;
+    }
+
+    // Menu Points
+
     ul {
         display: flex;
         flex-wrap: wrap;
@@ -932,6 +940,8 @@ div.widget.extendednavigation {
             justify-content: end;
         }
 
+        // Menu Point
+
         li {
             display: inline-block;
             padding: 5px 0;
@@ -958,36 +968,6 @@ div.widget.extendednavigation {
                         @media @tablet {
                             padding-left: 10px;
                         }
-                    }
-                }
-            }
-    
-            ul li.folder {
-                display: inline-block;
-                background-image: image('/images/arrow-down.png');
-                background-position: right 15px center;
-                background-repeat: no-repeat;
-                padding-right: 8px;
-                height: 100%;
-
-                &:after {
-                    display: none;
-                }
-        
-                &:hover {
-                    background-image: image('/images/arrow-down-hov.png');
-                    color: @font-swatch6-color-hover;
-                }
-            
-                .text {
-                    padding-left: 0;
-
-                    &:hover {
-                        color: @font-swatch6-color-hover;
-                    }
-            
-                    ul li .text {
-                        padding: 1px 25px;
                     }
                 }
             }
@@ -1022,74 +1002,119 @@ div.widget.extendednavigation {
                     padding-right: 22px;
                 }
             }
-        
-            ul li a:first-child {
-                padding-left: 0;
-            }
-        
-            ul li a:hover {
-                text-decoration: none;
-                color: @font-swatch6-color-hover;
-            }
-        }
-    }
 
-    li > ul {
-        display: none;
-        background-color: @color-swatch1;
-    }
-
-    li:hover > ul {
-        display: block;
-        width: 50%;
-        position: absolute;
-        background-color: @color-swatch1;
-        border: 1px solid @color-swatch2;
-        z-index: 500;
-        margin-top: 20px;
-
-        > li {
-            display: block;
-            width: 100%;
-            text-align: left;
-            border-bottom: 1px solid @color-swatch2;
-            padding: 0;
+            // Folder
     
-            &:hover {
-                background-color: @color-swatch2;
-            }
-    
-            &:last-child {
-                border-bottom: none;
-            }
-    
-            > a {
-                display: block;
-                background-image: none;
-                color: @font-swatch6-color;
-                margin-left: 0;
-                padding: 10px;
+            &.folder {
+                display: inline-block;
+                background-image: image('/images/arrow-down.png');
+                background-position: right 15px center;
+                background-repeat: no-repeat;
+                padding-right: 8px;
+                height: 100%;
         
-                .text {
-                    margin-left: 0;
+                &:hover {
+                    background-image: image('/images/arrow-down-hov.png');
+                    color: @font-swatch6-color-hover;
+                }
+	
+                &:after {
+                    content: none;
+                }
+            
+                > .text {
+                    padding-left: 0;
+
+                    &:hover {
+                        color: @font-swatch6-color-hover;
+                    }
+		
+                    // Folder Arrow
+
+                    &:after {
+                        content: '';
+                        display: block;
+                        position: absolute;
+                        top: 50%;
+                        right: 0.5em;
+                        border: 2px solid fade(@font-swatch6-color, 60%);
+                        border-top: transparent;
+                        border-left: transparent;
+                        transform: rotate(45deg);
+                        margin-top: -0.5em;
+                        width: 0.5em;
+                        height: 0.5em;
+                    }
+                
+                    &:hover:after {
+                        border-color: @font-swatch6-color-hover;
+                    }
+
+					// Dropdown
+
+					> ul,
+					&:hover > ul {
+                        display: none;
+                        position: absolute;
+                        z-index: 500;
+                        width: 50%;
+                        border: 1px solid @color-swatch2;
+                        background-color: @color-swatch1;
+                        margin-top: 20px;
+
+                        li {
+                            display: none;
+                            width: 100%;
+                            text-align: left;
+                            border-bottom: 1px solid @color-swatch2;
+                            padding: 0;
+    
+                            &:hover {
+                                background-color: @color-swatch2;
+                            }
+                    
+                            &:last-child {
+                                border-bottom: none;
+                            }
+    
+                            a {
+                                display: block;
+                                background-image: none;
+                                color: @font-swatch6-color;
+                                margin-left: 0;
+                                padding: 10px;
+
+                                &:hover {
+                                    text-decoration: none;
+                                    color: @font-swatch6-color-hover;
+                                }
+
+                                &:first-child {
+                                    padding-left: 0;
+                                }
+                        
+                                .text {
+                                    margin-left: 0;
+                                    padding: 1px 25px;
+                                }
+                            }
+                        }
+                    }
+	
+					// Folder Open
+			
+					&.folder-open ul,
+					&.folder-open:hover ul {
+						display: block;
+		
+						@media @tablet {
+							display: block;
+						}
+					}
                 }
             }
         }
     }
-
-    a.pull {
-        top: -36px;
-    }
-}
-
-.productlist-display-form .form-group {
-    float: none;
-    width: 100%;
-    padding: 0;
-}
-
-.form-group.productlist-search button {
-    margin-left: -4px;
 }
 
 // FEATURE
