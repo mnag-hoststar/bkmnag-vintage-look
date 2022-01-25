@@ -1242,61 +1242,6 @@ div.widget.extendednavigation {
     }
 }
 
-// PAYPAL BUTTON
-
-.widget.paypalbuynow .widget.button.paypal {
-    box-shadow: 1px 1px 0px 0px @color-swatch6;
-
-    .style--light & {
-        box-shadow: 1px 1px 0px 0px @color--dark;
-    }
-
-    .style--accent & {
-        box-shadow: 1px 1px 0px 0px @contrast--dark;
-    }
-
-    .style--dark & {
-        box-shadow: none;
-    }
-}
-
-// TWEET BUTTON
-
-.widget.tweet a {
-    padding: 10px 10px 10px 40px;
-    box-shadow: 1px 1px 0px 0px @color-swatch6;
-
-    .style--light & {
-        box-shadow: 1px 1px 0px 0px @color--dark;
-    }
-
-    .style--accent & {
-        box-shadow: 1px 1px 0px 0px @contrast--dark;
-    }
-
-    .style--dark & {
-        box-shadow: none;
-    }
-}
-
-// DROPBOX
-
-.widget.dropbox .b-wrap .btn {
-    box-shadow: 1px 1px 0px 0px @color-swatch6;
-
-    .style--light & {
-        box-shadow: 1px 1px 0px 0px @color--dark;
-    }
-
-    .style--accent & {
-        box-shadow: 1px 1px 0px 0px @contrast--dark;
-    }
-
-    .style--dark & {
-        box-shadow: none;
-    }
-}
-
 // BUTTON
 
 .btn,
@@ -1345,114 +1290,23 @@ a.contentgroup__link {
         box-shadow: none;
         color: @contrast--accent;
     }
-}
-
-.widget.button button:hover, .btn:hover {
-    background: @font-swatch7-background-color-hover;
-
-    .style--light & {
-        background-color: lighten(@color--accent, 10%);
-    }
-
-    .style--accent & {
-        background-color: lighten(@color--dark, 10%);
-    }
-
-    .style--dark & {
-        background-color: lighten(@color--accent, 10%);
-    }
-}
-
-// CLICK TO CALL
-
-.widget.clicktocall {
-    padding: 10px 0;
-
-    @media @mobile {
-        padding: 20px 0;
-        display:block;
-    }
-}
-
-.widget.clicktocall a {
-    background-image: image('/images/ic-desktop-call.png');
-    background-position: left 8px;
-    background-repeat:no-repeat;
-    padding: 10px 10px 10px 24px;
-    margin: 2.2em auto;
-    font-family: @font-swatch5-font-family;
-    font-size: @font-swatch5-font-size;
-    font-weight:@font-swatch5-font-weight;
-    color: @font-swatch5-color;
-    text-decoration: none;
-    cursor: default;
-
-    @media @mobile {
-        background-image: image('/images/ic-desktop-call.png');
-        background-position: 10px;
-        background-repeat: no-repeat;
-        padding: 10px 10px 10px 38px;
-        margin: 2.2em auto;
-        border: 0;
-        font-family: @font-swatch7-font-family;
-        font-size: @font-swatch7-font-size;
-        font-weight:@font-swatch7-font-weight;
-        background-color: @font-swatch7-background-color;
-        color: @font-swatch7-color;
-        text-decoration: none;
-        cursor: pointer;
-        box-shadow: 1px 1px 0px 0px @color-swatch6;
-
-        &:hover {
-            text-decoration: none;
-            background-color: @font-swatch7-background-color-hover;
+    
+    &:hover {
+        background: @font-swatch7-background-color-hover;
+    
+        .style--light & {
+            background-color: lighten(@color--accent, 10%);
         }
-    }
-
-    .style--light & {
-        color: @contrast--light;
-
-        @media @mobile {
-            background-color: @color--accent;
-            box-shadow: 1px 1px 0px 0px @color--dark;
-            color: @contrast--accent;
-
-            &:hover {
-                background-color: lighten(@color--accent, 10%);
-            }
+    
+        .style--accent & {
+            background-color: lighten(@color--dark, 10%);
         }
-    }
-
-    .style--accent & {
-        color: @contrast--accent;
-
-        @media @mobile {
-            background-color: @color--dark;
-            box-shadow: 1px 1px 0px 0px @color--dark;
-            color: @contrast--dark;
-
-            &:hover {
-                background-color: lighten(@color--dark, 10%);
-            }
-        }
-    }
-
-    .style--dark & {
-        color: @contrast--dark;
-
-        @media @mobile {
-            background-color: @color--accent;
-            box-shadow: none;
-            color: @contrast--accent;
-
-            &:hover {
-                background-color: lighten(@color--accent, 10%);
-            }
+    
+        .style--dark & {
+            background-color: lighten(@color--accent, 10%);
         }
     }
 }
-
-// BUTTON SPAN
 
 .widget button.btn span {
 	color: @font-swatch7-color;
@@ -1468,6 +1322,28 @@ a.contentgroup__link {
 	.style--dark & {
 		color: @contrast--accent;
 	} 
+}
+
+// Image Buttons
+
+.widget.tweet a,
+.widget.dropbox button,
+.widget.paypalbuynow .widget.button.paypal,
+.widget.filedownload .btn,
+.widget.clicktocall a {
+	padding-left: 50px;
+	background-position: 18px center;
+
+	&:hover {
+		padding-left: 50px;
+		background-position: 18px center;
+	}
+}
+
+.widget.clicktocall a {
+	&, &:hover, &:focus {
+		background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyRpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoTWFjaW50b3NoKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpENTg4MDkxNUI0RDcxMUUyOUZDMDhBQzY4M0VGNzM1QiIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpENTg4MDkxNkI0RDcxMUUyOUZDMDhBQzY4M0VGNzM1QiI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjYxMkE4MzU2QjRCQjExRTI5RkMwOEFDNjgzRUY3MzVCIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkQ1ODgwOTE0QjRENzExRTI5RkMwOEFDNjgzRUY3MzVCIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+s2QrvwAAAPxJREFUeNpi/P//PwM1ARMDlQE2A7uAGOTsHWSZCPIyFHMC8cz/qMASSZ4ojOzCCUCchmafOyVeVsIiHwXE7OQa+BaLPC8Uk2XgdiD+icR/DMS2QPyG3EhhAeIFSBEyk9QIAadpNAFDJAP/ArE+pQaCcDOSoSepYSAIH0EydCuaHCMQ8wIxEykGigHxPSRDzwOxGlQuDIi/AfExIG4BYn8gFiBkIAjLAfFjJEM/AfFGIH7zHxMcAGJ1QgaCsDAQn/hPGDwCYhdiDIThRgIGNhPjZXSsAsQLockJGUxHVsdIYgELylmJQOwHxPxAfAGIa4D4C0wB46AvsQECDAB0BaRrDCyrSQAAAABJRU5ErkJggg==);
+	}
 }
 
 // BLOCKQUOTE
