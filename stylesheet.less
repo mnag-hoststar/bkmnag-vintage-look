@@ -1037,6 +1037,7 @@ div.widget.extendednavigation {
                     border: 1px solid lighten(@color-swatch3, 25%);
 
                     @media @tablet {
+                        display: none;
                         position: static;
                         max-width: none;
                         min-width: auto;
@@ -1535,49 +1536,61 @@ select,
     padding: 0 8px;
     text-indent: 4px;
 	height: auto !important;
+	color: @font-swatch5-color;
 
     .style--light & {
         border-color: @color-swatch7;
+        color: @font-swatch5-color;
     }
 
     .style--accent & {
         border-color: darken(@color--accent, 15%);
+        color: @font-swatch5-color;
     }
 
     .style--dark & {
         border-color: fade(@contrast--dark, 85%);
+        color: @font-swatch5-color;
     }
 
     &:hover {
         border: 1px solid darken(@color-swatch7, 7%);
+        color: @font-swatch5-color;
 
         .style--light & {
             border-color: darken(@color-swatch7, 7%);
+            color: @font-swatch5-color;
         }
 
         .style--accent & {
             border-color: darken(@color--accent, 27%);
+            color: @font-swatch5-color;
         }
 
         .style--dark & {
             border-color: fade(@contrast--dark, 78%);
+            color: @font-swatch5-color;
         }
     }
 
     &:focus {
         box-shadow: none;
         border: 1px solid darken(@color-swatch7, 14%);
+        color: @font-swatch5-color;
 
         .style--light & {
             border-color: darken(@color-swatch7, 14%);
+            color: @font-swatch5-color;
         }
 
         .style--accent & {
             border-color: darken(@color--accent, 34%);
+            color: @font-swatch5-color;
         }
 
         .style--dark & {
             border-color: fade(@contrast--dark, 71%);
+            color: @font-swatch5-color;
         }
     }
 }
@@ -1589,7 +1602,8 @@ select,
 }
 
 textarea {
-    min-height: 100px
+    min-height: 100px;
+    padding: 8px;
 }
 
 // Dropdown
@@ -1627,11 +1641,6 @@ select {
 		background-color: @color-swatch1;
 		color: @font-swatch5-color;
 	}
-}
-
-.contactform,
-.advancedcontactform {
-
 }
 
 // Radiobuttons and Checkboxes
