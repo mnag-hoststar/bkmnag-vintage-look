@@ -1244,7 +1244,8 @@ form.blog-search-form .form-group button,
 .blog-post-more-link a,
 .widget.signupform .form-group button.btn,
 .widget.blogsearch .form-group button.btn,
-.widget.ecomproductslist .ecom-productslist-products .productlist-filter .form-group.productlist-search button.btn {
+.widget.ecomproductslist .ecom-productslist-products .productlist-filter .form-group.productlist-search button.btn,
+.productlist-clear-search {
     display: inline-block;
     cursor: pointer;
     padding: 10px 30px;
@@ -1364,6 +1365,16 @@ form.blog-search-form .form-group button,
 	span.file-name {
 		display: block;
 		margin: 0.5em 0;
+	}
+}
+
+// Product List Clear Search
+
+.productlist-clear-search {
+	margin: 10px 5px 60px;
+
+	@media @mobile {
+        margin: 10px 0 60px;
 	}
 }
 
@@ -2811,6 +2822,12 @@ hr.line {
 
 .widget.ecomproductslist .productlist-item-count {
     clear: both;
+    padding: 5px;
+
+    @media @mobile {
+        padding: 5px 0;
+    }
+
 }
 
 // Product Item
