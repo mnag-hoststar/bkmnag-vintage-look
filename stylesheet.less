@@ -2612,25 +2612,35 @@ hr.line,
 	}
 }
 
-.blog-post-publish-date {
-    display: block;
-    margin: 5px 0 8px;
-}
-
-.blog-post-category-label,
-.blog-post-tags-label {
-    &:after {
-        content: ':\00a0';
-        position: relative;
-    }
-}
-
 .blogsearch {
     label {
         display: block;
     }
 }
 
+.blog-post-metadata {
+    margin: 2em 0;
+
+    .blog-post-publish-date {
+        display: block;
+        margin: 5px 0 8px;
+    }
+    
+    .blog-post-category-label,
+    .blog-post-tags-label {
+        &:after {
+            content: ':\00a0';
+            position: relative;
+        }
+    }
+
+    .blog-post-category,
+    .blog-post-tag {
+        display: inline-block;
+        word-break: break-word;
+    }
+}
+    
 .blog-post-sharing {
     margin-top: 20px;
 
@@ -2638,10 +2648,10 @@ hr.line,
         margin-right: 1em;
         margin-bottom: 1em;
 
-		@media @mobile {
+        @media @mobile {
             margin-right: 0;
             margin-bottom: 1em;
-		}
+        }
     }
 
     .btn.facebook {
